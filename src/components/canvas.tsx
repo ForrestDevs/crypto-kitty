@@ -35,6 +35,7 @@ const Canvas: React.FC = () => {
     targetLoops: 1,
     lastFrameTime: 0,
   });
+  const speedMultiplierRef = useRef<number>(1);
   const [isLoading, setIsLoading] = useState(true);
 
   // Load animations from combined config with custom FPS settings
@@ -46,7 +47,7 @@ const Canvas: React.FC = () => {
       frameWidth: config.animations[0].frameWidth,
       frameHeight: config.animations[0].frameHeight,
       rowIndex: 0,
-      fps: 30,
+      fps: getFpsForAnimation(),
     },
     ...Object.fromEntries(
       config.animations.map((anim) => [
@@ -57,7 +58,7 @@ const Canvas: React.FC = () => {
           frameWidth: anim.frameWidth,
           frameHeight: anim.frameHeight,
           rowIndex: anim.rowIndex,
-          fps: getFpsForAnimation(anim.name), // Helper function to set custom FPS
+          fps: getFpsForAnimation(),
         },
       ])
     ),
@@ -65,19 +66,10 @@ const Canvas: React.FC = () => {
 
   const spriteSheetRef = useRef<HTMLImageElement | null>(null);
 
-  // Helper function to set custom FPS for different animations
-  function getFpsForAnimation(name: string): number {
-    switch (name) {
-      //   case "eat_eating":
-      //     return 24;
-      //   case "eat_hungry":
-      //     return 12;
-      //   case "sleep_sleeping":
-      //     return 8;
-      // Add more cases as needed
-      default:
-        return 60; // Default FPS
-    }
+  // Helper function to get FPS with speed multiplier
+  function getFpsForAnimation(): number {
+    const baseFps = 40; // Base FPS for all animations
+    return baseFps * speedMultiplierRef.current;
   }
 
   const playAnimation = (animationName: AnimationName, loops: number = 1) => {
@@ -109,7 +101,7 @@ const Canvas: React.FC = () => {
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth * 0.8;
+      canvas.width = window.innerWidth * 0.98;
       canvas.height = window.innerHeight * 0.6;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
@@ -214,7 +206,7 @@ const Canvas: React.FC = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [animations]);
 
   // Group animations by category
   const animationsByCategory = Object.entries(animations)
@@ -238,27 +230,32 @@ const Canvas: React.FC = () => {
           </div>
         </div>
       ) : null}
-      
-      <canvas ref={canvasRef} className={isLoading ? "opacity-0" : "opacity-100"} />
+
+      <canvas
+        ref={canvasRef}
+        className={isLoading ? "opacity-0" : "opacity-100"}
+      />
       <div className="flex flex-col items-center w-full max-w-md p-4 gap-4">
-        <select
-          className="text-black w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-          onChange={(e) => playAnimation(e.target.value)}
-          disabled={isLoading}
-        >
-          <option value="">Select animation</option>
-          {Object.entries(animationsByCategory).map(
-            ([category, animations]) => (
-              <optgroup key={category} label={category.toUpperCase()}>
-                {animations.map((animName) => (
-                  <option key={animName} value={animName}>
-                    {animName.split("_")[1]}
-                  </option>
-                ))}
-              </optgroup>
-            )
-          )}
-        </select>
+        <div className="flex gap-4 w-full">
+          <select
+            className="text-black flex-1 p-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            onChange={(e) => playAnimation(e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="">Select animation</option>
+            {Object.entries(animationsByCategory).map(
+              ([category, animations]) => (
+                <optgroup key={category} label={category.toUpperCase()}>
+                  {animations.map((animName) => (
+                    <option key={animName} value={animName}>
+                      {animName.split("_")[1]}
+                    </option>
+                  ))}
+                </optgroup>
+              )
+            )}
+          </select>
+        </div>
 
         <div className="flex gap-2">
           <button

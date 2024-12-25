@@ -2,13 +2,13 @@ import Canvas from "@/components/canvas";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-blue-100 to-purple-100">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen pb-20 gap-8 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-blue-100 to-purple-100">
       <header className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-bold text-purple-800">Crypto Kitty</h1>
         <p className="text-lg text-gray-600">Your virtual pet on the blockchain</p>
       </header>
 
-      <main className="flex flex-col gap-8 items-center w-full max-w-4xl">
+      <main className="flex flex-col gap-8 items-center w-full">
         <Canvas />
         
         <div className="flex gap-6 flex-wrap justify-center">
