@@ -1,0 +1,1925 @@
+.sprite {
+    background-image: url('./combined-sprite.png');
+    background-repeat: no-repeat;
+    width: 512px;
+    height: 512px;
+    display: inline-block;
+}
+
+.sprite-eat_eating-0 {
+    background-position: -0px -0px;
+}
+.sprite-eat_eating-1 {
+    background-position: -512px -0px;
+}
+.sprite-eat_eating-2 {
+    background-position: -1024px -0px;
+}
+.sprite-eat_eating-3 {
+    background-position: -1536px -0px;
+}
+.sprite-eat_eating-4 {
+    background-position: -2048px -0px;
+}
+.sprite-eat_eating-5 {
+    background-position: -2560px -0px;
+}
+.sprite-eat_eating-6 {
+    background-position: -3072px -0px;
+}
+.sprite-eat_eating-7 {
+    background-position: -3584px -0px;
+}
+.sprite-eat_eating-8 {
+    background-position: -4096px -0px;
+}
+.sprite-eat_eating-9 {
+    background-position: -4608px -0px;
+}
+.sprite-eat_eating-10 {
+    background-position: -5120px -0px;
+}
+.sprite-eat_eating-11 {
+    background-position: -5632px -0px;
+}
+.sprite-eat_eating-12 {
+    background-position: -6144px -0px;
+}
+.sprite-eat_eating-13 {
+    background-position: -6656px -0px;
+}
+.sprite-eat_eating-14 {
+    background-position: -7168px -0px;
+}
+.sprite-eat_eating-15 {
+    background-position: -7680px -0px;
+}
+.sprite-eat_eating-16 {
+    background-position: -8192px -0px;
+}
+.sprite-eat_eating-17 {
+    background-position: -8704px -0px;
+}
+.sprite-eat_eating-18 {
+    background-position: -9216px -0px;
+}
+.sprite-eat_eating-19 {
+    background-position: -9728px -0px;
+}
+.sprite-eat_eating-20 {
+    background-position: -10240px -0px;
+}
+.sprite-eat_eating-21 {
+    background-position: -10752px -0px;
+}
+.sprite-eat_eating-22 {
+    background-position: -11264px -0px;
+}
+.sprite-eat_eating-23 {
+    background-position: -11776px -0px;
+}
+.sprite-eat_eating-24 {
+    background-position: -12288px -0px;
+}
+.sprite-eat_eating-25 {
+    background-position: -12800px -0px;
+}
+.sprite-eat_eating-26 {
+    background-position: -13312px -0px;
+}
+.sprite-eat_eating-27 {
+    background-position: -13824px -0px;
+}
+.sprite-eat_eating-28 {
+    background-position: -14336px -0px;
+}
+.sprite-eat_eating-29 {
+    background-position: -14848px -0px;
+}
+.sprite-eat_eating-30 {
+    background-position: -15360px -0px;
+}
+.sprite-eat_eating-31 {
+    background-position: -15872px -0px;
+}
+.sprite-eat_eating-32 {
+    background-position: -16384px -0px;
+}
+.sprite-eat_eating-33 {
+    background-position: -16896px -0px;
+}
+.sprite-eat_eating-34 {
+    background-position: -17408px -0px;
+}
+.sprite-eat_eating-35 {
+    background-position: -17920px -0px;
+}
+.sprite-eat_eating-36 {
+    background-position: -18432px -0px;
+}
+.sprite-eat_eating-37 {
+    background-position: -18944px -0px;
+}
+.sprite-eat_eating-38 {
+    background-position: -19456px -0px;
+}
+.sprite-eat_eating-39 {
+    background-position: -19968px -0px;
+}
+.sprite-eat_eating-40 {
+    background-position: -20480px -0px;
+}
+.sprite-eat_eating-41 {
+    background-position: -20992px -0px;
+}
+.sprite-eat_eating-42 {
+    background-position: -21504px -0px;
+}
+.sprite-eat_eating-43 {
+    background-position: -22016px -0px;
+}
+.sprite-eat_eating-44 {
+    background-position: -22528px -0px;
+}
+.sprite-eat_eating-45 {
+    background-position: -23040px -0px;
+}
+.sprite-eat_eating-46 {
+    background-position: -23552px -0px;
+}
+.sprite-eat_eating-47 {
+    background-position: -24064px -0px;
+}
+.sprite-eat_eating-48 {
+    background-position: -24576px -0px;
+}
+.sprite-eat_eating-49 {
+    background-position: -25088px -0px;
+}
+.sprite-eat_eating-50 {
+    background-position: -25600px -0px;
+}
+.sprite-eat_eating-51 {
+    background-position: -26112px -0px;
+}
+.sprite-eat_eating-52 {
+    background-position: -26624px -0px;
+}
+.sprite-eat_eating-53 {
+    background-position: -27136px -0px;
+}
+.sprite-eat_eating-54 {
+    background-position: -27648px -0px;
+}
+.sprite-eat_eating-55 {
+    background-position: -28160px -0px;
+}
+.sprite-eat_eating-56 {
+    background-position: -28672px -0px;
+}
+.sprite-eat_eating-57 {
+    background-position: -29184px -0px;
+}
+.sprite-eat_eating-58 {
+    background-position: -29696px -0px;
+}
+.sprite-eat_eating-59 {
+    background-position: -30208px -0px;
+}
+.sprite-eat_eating-60 {
+    background-position: -30720px -0px;
+}
+.sprite-eat_eating-61 {
+    background-position: -31232px -0px;
+}
+.sprite-eat_eating-62 {
+    background-position: -31744px -0px;
+}
+.sprite-eat_eating-63 {
+    background-position: -32256px -0px;
+}
+.sprite-eat_eating-64 {
+    background-position: -32768px -0px;
+}
+.sprite-eat_eating-65 {
+    background-position: -33280px -0px;
+}
+.sprite-eat_eating-66 {
+    background-position: -33792px -0px;
+}
+.sprite-eat_eating-67 {
+    background-position: -34304px -0px;
+}
+.sprite-eat_eating-68 {
+    background-position: -34816px -0px;
+}
+.sprite-eat_eating-69 {
+    background-position: -35328px -0px;
+}
+.sprite-eat_eating-70 {
+    background-position: -35840px -0px;
+}
+.sprite-eat_eating-71 {
+    background-position: -36352px -0px;
+}
+.sprite-eat_eating-72 {
+    background-position: -36864px -0px;
+}
+.sprite-eat_eating-73 {
+    background-position: -37376px -0px;
+}
+.sprite-eat_eating-74 {
+    background-position: -37888px -0px;
+}
+.sprite-eat_eating-75 {
+    background-position: -38400px -0px;
+}
+.sprite-eat_eating-76 {
+    background-position: -38912px -0px;
+}
+.sprite-eat_eating-77 {
+    background-position: -39424px -0px;
+}
+.sprite-eat_eating-78 {
+    background-position: -39936px -0px;
+}
+.sprite-eat_eating-79 {
+    background-position: -40448px -0px;
+}
+.sprite-eat_hungry-0 {
+    background-position: -0px -512px;
+}
+.sprite-eat_hungry-1 {
+    background-position: -512px -512px;
+}
+.sprite-eat_hungry-2 {
+    background-position: -1024px -512px;
+}
+.sprite-eat_hungry-3 {
+    background-position: -1536px -512px;
+}
+.sprite-eat_hungry-4 {
+    background-position: -2048px -512px;
+}
+.sprite-eat_hungry-5 {
+    background-position: -2560px -512px;
+}
+.sprite-eat_hungry-6 {
+    background-position: -3072px -512px;
+}
+.sprite-eat_hungry-7 {
+    background-position: -3584px -512px;
+}
+.sprite-eat_hungry-8 {
+    background-position: -4096px -512px;
+}
+.sprite-eat_hungry-9 {
+    background-position: -4608px -512px;
+}
+.sprite-eat_hungry-10 {
+    background-position: -5120px -512px;
+}
+.sprite-eat_hungry-11 {
+    background-position: -5632px -512px;
+}
+.sprite-eat_hungry-12 {
+    background-position: -6144px -512px;
+}
+.sprite-eat_hungry-13 {
+    background-position: -6656px -512px;
+}
+.sprite-eat_hungry-14 {
+    background-position: -7168px -512px;
+}
+.sprite-eat_hungry-15 {
+    background-position: -7680px -512px;
+}
+.sprite-eat_hungry-16 {
+    background-position: -8192px -512px;
+}
+.sprite-eat_hungry-17 {
+    background-position: -8704px -512px;
+}
+.sprite-eat_hungry-18 {
+    background-position: -9216px -512px;
+}
+.sprite-eat_hungry-19 {
+    background-position: -9728px -512px;
+}
+.sprite-eat_hungry-20 {
+    background-position: -10240px -512px;
+}
+.sprite-eat_hungry-21 {
+    background-position: -10752px -512px;
+}
+.sprite-eat_hungry-22 {
+    background-position: -11264px -512px;
+}
+.sprite-eat_hungry-23 {
+    background-position: -11776px -512px;
+}
+.sprite-eat_hungry-24 {
+    background-position: -12288px -512px;
+}
+.sprite-eat_hungry-25 {
+    background-position: -12800px -512px;
+}
+.sprite-eat_hungry-26 {
+    background-position: -13312px -512px;
+}
+.sprite-eat_hungry-27 {
+    background-position: -13824px -512px;
+}
+.sprite-eat_hungry-28 {
+    background-position: -14336px -512px;
+}
+.sprite-eat_hungry-29 {
+    background-position: -14848px -512px;
+}
+.sprite-eat_hungry-30 {
+    background-position: -15360px -512px;
+}
+.sprite-eat_hungry-31 {
+    background-position: -15872px -512px;
+}
+.sprite-eat_hungry-32 {
+    background-position: -16384px -512px;
+}
+.sprite-eat_hungry-33 {
+    background-position: -16896px -512px;
+}
+.sprite-eat_hungry-34 {
+    background-position: -17408px -512px;
+}
+.sprite-eat_hungry-35 {
+    background-position: -17920px -512px;
+}
+.sprite-eat_hungry-36 {
+    background-position: -18432px -512px;
+}
+.sprite-eat_hungry-37 {
+    background-position: -18944px -512px;
+}
+.sprite-eat_hungry-38 {
+    background-position: -19456px -512px;
+}
+.sprite-eat_hungry-39 {
+    background-position: -19968px -512px;
+}
+.sprite-eat_hungry-40 {
+    background-position: -20480px -512px;
+}
+.sprite-eat_hungry-41 {
+    background-position: -20992px -512px;
+}
+.sprite-eat_hungry-42 {
+    background-position: -21504px -512px;
+}
+.sprite-eat_hungry-43 {
+    background-position: -22016px -512px;
+}
+.sprite-eat_hungry-44 {
+    background-position: -22528px -512px;
+}
+.sprite-eat_hungry-45 {
+    background-position: -23040px -512px;
+}
+.sprite-eat_hungry-46 {
+    background-position: -23552px -512px;
+}
+.sprite-eat_hungry-47 {
+    background-position: -24064px -512px;
+}
+.sprite-eat_hungry-48 {
+    background-position: -24576px -512px;
+}
+.sprite-eat_hungry-49 {
+    background-position: -25088px -512px;
+}
+.sprite-eat_hungry-50 {
+    background-position: -25600px -512px;
+}
+.sprite-eat_hungry-51 {
+    background-position: -26112px -512px;
+}
+.sprite-eat_hungry-52 {
+    background-position: -26624px -512px;
+}
+.sprite-eat_hungry-53 {
+    background-position: -27136px -512px;
+}
+.sprite-eat_hungry-54 {
+    background-position: -27648px -512px;
+}
+.sprite-eat_hungry-55 {
+    background-position: -28160px -512px;
+}
+.sprite-eat_hungry-56 {
+    background-position: -28672px -512px;
+}
+.sprite-eat_hungry-57 {
+    background-position: -29184px -512px;
+}
+.sprite-eat_hungry-58 {
+    background-position: -29696px -512px;
+}
+.sprite-eat_hungry-59 {
+    background-position: -30208px -512px;
+}
+.sprite-eat_hungry-60 {
+    background-position: -30720px -512px;
+}
+.sprite-eat_hungry-61 {
+    background-position: -31232px -512px;
+}
+.sprite-eat_hungry-62 {
+    background-position: -31744px -512px;
+}
+.sprite-eat_hungry-63 {
+    background-position: -32256px -512px;
+}
+.sprite-eat_hungry-64 {
+    background-position: -32768px -512px;
+}
+.sprite-eat_hungry-65 {
+    background-position: -33280px -512px;
+}
+.sprite-eat_hungry-66 {
+    background-position: -33792px -512px;
+}
+.sprite-eat_hungry-67 {
+    background-position: -34304px -512px;
+}
+.sprite-eat_hungry-68 {
+    background-position: -34816px -512px;
+}
+.sprite-eat_hungry-69 {
+    background-position: -35328px -512px;
+}
+.sprite-eat_hungry-70 {
+    background-position: -35840px -512px;
+}
+.sprite-eat_hungry-71 {
+    background-position: -36352px -512px;
+}
+.sprite-eat_hungry-72 {
+    background-position: -36864px -512px;
+}
+.sprite-eat_hungry-73 {
+    background-position: -37376px -512px;
+}
+.sprite-eat_hungry-74 {
+    background-position: -37888px -512px;
+}
+.sprite-eat_hungry-75 {
+    background-position: -38400px -512px;
+}
+.sprite-eat_hungry-76 {
+    background-position: -38912px -512px;
+}
+.sprite-eat_hungry-77 {
+    background-position: -39424px -512px;
+}
+.sprite-eat_hungry-78 {
+    background-position: -39936px -512px;
+}
+.sprite-eat_hungry-79 {
+    background-position: -40448px -512px;
+}
+.sprite-sleep_sleeping-0 {
+    background-position: -0px -1024px;
+}
+.sprite-sleep_sleeping-1 {
+    background-position: -512px -1024px;
+}
+.sprite-sleep_sleeping-2 {
+    background-position: -1024px -1024px;
+}
+.sprite-sleep_sleeping-3 {
+    background-position: -1536px -1024px;
+}
+.sprite-sleep_sleeping-4 {
+    background-position: -2048px -1024px;
+}
+.sprite-sleep_sleeping-5 {
+    background-position: -2560px -1024px;
+}
+.sprite-sleep_sleeping-6 {
+    background-position: -3072px -1024px;
+}
+.sprite-sleep_sleeping-7 {
+    background-position: -3584px -1024px;
+}
+.sprite-sleep_sleeping-8 {
+    background-position: -4096px -1024px;
+}
+.sprite-sleep_sleeping-9 {
+    background-position: -4608px -1024px;
+}
+.sprite-sleep_sleeping-10 {
+    background-position: -5120px -1024px;
+}
+.sprite-sleep_sleeping-11 {
+    background-position: -5632px -1024px;
+}
+.sprite-sleep_sleeping-12 {
+    background-position: -6144px -1024px;
+}
+.sprite-sleep_sleeping-13 {
+    background-position: -6656px -1024px;
+}
+.sprite-sleep_sleeping-14 {
+    background-position: -7168px -1024px;
+}
+.sprite-sleep_sleeping-15 {
+    background-position: -7680px -1024px;
+}
+.sprite-sleep_sleeping-16 {
+    background-position: -8192px -1024px;
+}
+.sprite-sleep_sleeping-17 {
+    background-position: -8704px -1024px;
+}
+.sprite-sleep_sleeping-18 {
+    background-position: -9216px -1024px;
+}
+.sprite-sleep_sleeping-19 {
+    background-position: -9728px -1024px;
+}
+.sprite-sleep_sleeping-20 {
+    background-position: -10240px -1024px;
+}
+.sprite-sleep_sleeping-21 {
+    background-position: -10752px -1024px;
+}
+.sprite-sleep_sleeping-22 {
+    background-position: -11264px -1024px;
+}
+.sprite-sleep_sleeping-23 {
+    background-position: -11776px -1024px;
+}
+.sprite-sleep_sleeping-24 {
+    background-position: -12288px -1024px;
+}
+.sprite-sleep_sleeping-25 {
+    background-position: -12800px -1024px;
+}
+.sprite-sleep_sleeping-26 {
+    background-position: -13312px -1024px;
+}
+.sprite-sleep_sleeping-27 {
+    background-position: -13824px -1024px;
+}
+.sprite-sleep_sleeping-28 {
+    background-position: -14336px -1024px;
+}
+.sprite-sleep_sleeping-29 {
+    background-position: -14848px -1024px;
+}
+.sprite-sleep_sleeping-30 {
+    background-position: -15360px -1024px;
+}
+.sprite-sleep_sleeping-31 {
+    background-position: -15872px -1024px;
+}
+.sprite-sleep_sleeping-32 {
+    background-position: -16384px -1024px;
+}
+.sprite-sleep_sleeping-33 {
+    background-position: -16896px -1024px;
+}
+.sprite-sleep_sleeping-34 {
+    background-position: -17408px -1024px;
+}
+.sprite-sleep_sleeping-35 {
+    background-position: -17920px -1024px;
+}
+.sprite-sleep_sleeping-36 {
+    background-position: -18432px -1024px;
+}
+.sprite-sleep_sleeping-37 {
+    background-position: -18944px -1024px;
+}
+.sprite-sleep_sleeping-38 {
+    background-position: -19456px -1024px;
+}
+.sprite-sleep_sleeping-39 {
+    background-position: -19968px -1024px;
+}
+.sprite-sleep_sleeping-40 {
+    background-position: -20480px -1024px;
+}
+.sprite-sleep_sleeping-41 {
+    background-position: -20992px -1024px;
+}
+.sprite-sleep_sleeping-42 {
+    background-position: -21504px -1024px;
+}
+.sprite-sleep_sleeping-43 {
+    background-position: -22016px -1024px;
+}
+.sprite-sleep_sleeping-44 {
+    background-position: -22528px -1024px;
+}
+.sprite-sleep_sleeping-45 {
+    background-position: -23040px -1024px;
+}
+.sprite-sleep_sleeping-46 {
+    background-position: -23552px -1024px;
+}
+.sprite-sleep_sleeping-47 {
+    background-position: -24064px -1024px;
+}
+.sprite-sleep_sleeping-48 {
+    background-position: -24576px -1024px;
+}
+.sprite-sleep_sleeping-49 {
+    background-position: -25088px -1024px;
+}
+.sprite-sleep_sleeping-50 {
+    background-position: -25600px -1024px;
+}
+.sprite-sleep_sleeping-51 {
+    background-position: -26112px -1024px;
+}
+.sprite-sleep_sleeping-52 {
+    background-position: -26624px -1024px;
+}
+.sprite-sleep_sleeping-53 {
+    background-position: -27136px -1024px;
+}
+.sprite-sleep_sleeping-54 {
+    background-position: -27648px -1024px;
+}
+.sprite-sleep_sleeping-55 {
+    background-position: -28160px -1024px;
+}
+.sprite-sleep_sleeping-56 {
+    background-position: -28672px -1024px;
+}
+.sprite-sleep_sleeping-57 {
+    background-position: -29184px -1024px;
+}
+.sprite-sleep_sleeping-58 {
+    background-position: -29696px -1024px;
+}
+.sprite-sleep_sleeping-59 {
+    background-position: -30208px -1024px;
+}
+.sprite-sleep_sleeping-60 {
+    background-position: -30720px -1024px;
+}
+.sprite-sleep_sleeping-61 {
+    background-position: -31232px -1024px;
+}
+.sprite-sleep_sleeping-62 {
+    background-position: -31744px -1024px;
+}
+.sprite-sleep_sleeping-63 {
+    background-position: -32256px -1024px;
+}
+.sprite-sleep_sleeping-64 {
+    background-position: -32768px -1024px;
+}
+.sprite-sleep_sleeping-65 {
+    background-position: -33280px -1024px;
+}
+.sprite-sleep_sleeping-66 {
+    background-position: -33792px -1024px;
+}
+.sprite-sleep_sleeping-67 {
+    background-position: -34304px -1024px;
+}
+.sprite-sleep_sleeping-68 {
+    background-position: -34816px -1024px;
+}
+.sprite-sleep_sleeping-69 {
+    background-position: -35328px -1024px;
+}
+.sprite-sleep_sleeping-70 {
+    background-position: -35840px -1024px;
+}
+.sprite-sleep_sleeping-71 {
+    background-position: -36352px -1024px;
+}
+.sprite-sleep_sleeping-72 {
+    background-position: -36864px -1024px;
+}
+.sprite-sleep_sleeping-73 {
+    background-position: -37376px -1024px;
+}
+.sprite-sleep_sleeping-74 {
+    background-position: -37888px -1024px;
+}
+.sprite-sleep_sleeping-75 {
+    background-position: -38400px -1024px;
+}
+.sprite-sleep_sleeping-76 {
+    background-position: -38912px -1024px;
+}
+.sprite-sleep_sleeping-77 {
+    background-position: -39424px -1024px;
+}
+.sprite-sleep_sleeping-78 {
+    background-position: -39936px -1024px;
+}
+.sprite-sleep_sleeping-79 {
+    background-position: -40448px -1024px;
+}
+.sprite-sleep_sleeping-80 {
+    background-position: -40960px -1024px;
+}
+.sprite-sleep_sleeping-81 {
+    background-position: -41472px -1024px;
+}
+.sprite-sleep_sleepy-0 {
+    background-position: -0px -1536px;
+}
+.sprite-sleep_sleepy-1 {
+    background-position: -512px -1536px;
+}
+.sprite-sleep_sleepy-2 {
+    background-position: -1024px -1536px;
+}
+.sprite-sleep_sleepy-3 {
+    background-position: -1536px -1536px;
+}
+.sprite-sleep_sleepy-4 {
+    background-position: -2048px -1536px;
+}
+.sprite-sleep_sleepy-5 {
+    background-position: -2560px -1536px;
+}
+.sprite-sleep_sleepy-6 {
+    background-position: -3072px -1536px;
+}
+.sprite-sleep_sleepy-7 {
+    background-position: -3584px -1536px;
+}
+.sprite-sleep_sleepy-8 {
+    background-position: -4096px -1536px;
+}
+.sprite-sleep_sleepy-9 {
+    background-position: -4608px -1536px;
+}
+.sprite-sleep_sleepy-10 {
+    background-position: -5120px -1536px;
+}
+.sprite-sleep_sleepy-11 {
+    background-position: -5632px -1536px;
+}
+.sprite-sleep_sleepy-12 {
+    background-position: -6144px -1536px;
+}
+.sprite-sleep_sleepy-13 {
+    background-position: -6656px -1536px;
+}
+.sprite-sleep_sleepy-14 {
+    background-position: -7168px -1536px;
+}
+.sprite-sleep_sleepy-15 {
+    background-position: -7680px -1536px;
+}
+.sprite-sleep_sleepy-16 {
+    background-position: -8192px -1536px;
+}
+.sprite-sleep_sleepy-17 {
+    background-position: -8704px -1536px;
+}
+.sprite-sleep_sleepy-18 {
+    background-position: -9216px -1536px;
+}
+.sprite-sleep_sleepy-19 {
+    background-position: -9728px -1536px;
+}
+.sprite-sleep_sleepy-20 {
+    background-position: -10240px -1536px;
+}
+.sprite-sleep_sleepy-21 {
+    background-position: -10752px -1536px;
+}
+.sprite-sleep_sleepy-22 {
+    background-position: -11264px -1536px;
+}
+.sprite-sleep_sleepy-23 {
+    background-position: -11776px -1536px;
+}
+.sprite-sleep_sleepy-24 {
+    background-position: -12288px -1536px;
+}
+.sprite-sleep_sleepy-25 {
+    background-position: -12800px -1536px;
+}
+.sprite-sleep_sleepy-26 {
+    background-position: -13312px -1536px;
+}
+.sprite-sleep_sleepy-27 {
+    background-position: -13824px -1536px;
+}
+.sprite-sleep_sleepy-28 {
+    background-position: -14336px -1536px;
+}
+.sprite-sleep_sleepy-29 {
+    background-position: -14848px -1536px;
+}
+.sprite-sleep_sleepy-30 {
+    background-position: -15360px -1536px;
+}
+.sprite-sleep_sleepy-31 {
+    background-position: -15872px -1536px;
+}
+.sprite-sleep_sleepy-32 {
+    background-position: -16384px -1536px;
+}
+.sprite-sleep_sleepy-33 {
+    background-position: -16896px -1536px;
+}
+.sprite-sleep_sleepy-34 {
+    background-position: -17408px -1536px;
+}
+.sprite-sleep_sleepy-35 {
+    background-position: -17920px -1536px;
+}
+.sprite-sleep_sleepy-36 {
+    background-position: -18432px -1536px;
+}
+.sprite-sleep_sleepy-37 {
+    background-position: -18944px -1536px;
+}
+.sprite-sleep_sleepy-38 {
+    background-position: -19456px -1536px;
+}
+.sprite-sleep_sleepy-39 {
+    background-position: -19968px -1536px;
+}
+.sprite-sleep_sleepy-40 {
+    background-position: -20480px -1536px;
+}
+.sprite-sleep_sleepy-41 {
+    background-position: -20992px -1536px;
+}
+.sprite-sleep_sleepy-42 {
+    background-position: -21504px -1536px;
+}
+.sprite-sleep_sleepy-43 {
+    background-position: -22016px -1536px;
+}
+.sprite-sleep_sleepy-44 {
+    background-position: -22528px -1536px;
+}
+.sprite-sleep_sleepy-45 {
+    background-position: -23040px -1536px;
+}
+.sprite-sleep_sleepy-46 {
+    background-position: -23552px -1536px;
+}
+.sprite-sleep_sleepy-47 {
+    background-position: -24064px -1536px;
+}
+.sprite-sleep_sleepy-48 {
+    background-position: -24576px -1536px;
+}
+.sprite-sleep_sleepy-49 {
+    background-position: -25088px -1536px;
+}
+.sprite-sleep_sleepy-50 {
+    background-position: -25600px -1536px;
+}
+.sprite-sleep_sleepy-51 {
+    background-position: -26112px -1536px;
+}
+.sprite-sleep_sleepy-52 {
+    background-position: -26624px -1536px;
+}
+.sprite-sleep_sleepy-53 {
+    background-position: -27136px -1536px;
+}
+.sprite-sleep_sleepy-54 {
+    background-position: -27648px -1536px;
+}
+.sprite-sleep_sleepy-55 {
+    background-position: -28160px -1536px;
+}
+.sprite-sleep_sleepy-56 {
+    background-position: -28672px -1536px;
+}
+.sprite-sleep_sleepy-57 {
+    background-position: -29184px -1536px;
+}
+.sprite-sleep_sleepy-58 {
+    background-position: -29696px -1536px;
+}
+.sprite-sleep_sleepy-59 {
+    background-position: -30208px -1536px;
+}
+.sprite-sleep_sleepy-60 {
+    background-position: -30720px -1536px;
+}
+.sprite-sleep_sleepy-61 {
+    background-position: -31232px -1536px;
+}
+.sprite-sleep_sleepy-62 {
+    background-position: -31744px -1536px;
+}
+.sprite-sleep_sleepy-63 {
+    background-position: -32256px -1536px;
+}
+.sprite-sleep_sleepy-64 {
+    background-position: -32768px -1536px;
+}
+.sprite-sleep_sleepy-65 {
+    background-position: -33280px -1536px;
+}
+.sprite-sleep_sleepy-66 {
+    background-position: -33792px -1536px;
+}
+.sprite-sleep_sleepy-67 {
+    background-position: -34304px -1536px;
+}
+.sprite-sleep_sleepy-68 {
+    background-position: -34816px -1536px;
+}
+.sprite-sleep_sleepy-69 {
+    background-position: -35328px -1536px;
+}
+.sprite-sleep_sleepy-70 {
+    background-position: -35840px -1536px;
+}
+.sprite-sleep_sleepy-71 {
+    background-position: -36352px -1536px;
+}
+.sprite-sleep_sleepy-72 {
+    background-position: -36864px -1536px;
+}
+.sprite-sleep_sleepy-73 {
+    background-position: -37376px -1536px;
+}
+.sprite-sleep_sleepy-74 {
+    background-position: -37888px -1536px;
+}
+.sprite-sleep_sleepy-75 {
+    background-position: -38400px -1536px;
+}
+.sprite-sleep_sleepy-76 {
+    background-position: -38912px -1536px;
+}
+.sprite-sleep_sleepy-77 {
+    background-position: -39424px -1536px;
+}
+.sprite-sleep_sleepy-78 {
+    background-position: -39936px -1536px;
+}
+.sprite-sleep_sleepstart-0 {
+    background-position: -0px -2048px;
+}
+.sprite-sleep_sleepstart-1 {
+    background-position: -512px -2048px;
+}
+.sprite-sleep_sleepstart-2 {
+    background-position: -1024px -2048px;
+}
+.sprite-sleep_sleepstart-3 {
+    background-position: -1536px -2048px;
+}
+.sprite-sleep_sleepstart-4 {
+    background-position: -2048px -2048px;
+}
+.sprite-sleep_sleepstart-5 {
+    background-position: -2560px -2048px;
+}
+.sprite-sleep_sleepstart-6 {
+    background-position: -3072px -2048px;
+}
+.sprite-sleep_sleepstart-7 {
+    background-position: -3584px -2048px;
+}
+.sprite-sleep_sleepstart-8 {
+    background-position: -4096px -2048px;
+}
+.sprite-sleep_sleepstart-9 {
+    background-position: -4608px -2048px;
+}
+.sprite-sleep_sleepstart-10 {
+    background-position: -5120px -2048px;
+}
+.sprite-sleep_sleepstart-11 {
+    background-position: -5632px -2048px;
+}
+.sprite-sleep_sleepstart-12 {
+    background-position: -6144px -2048px;
+}
+.sprite-sleep_sleepstart-13 {
+    background-position: -6656px -2048px;
+}
+.sprite-sleep_sleepstart-14 {
+    background-position: -7168px -2048px;
+}
+.sprite-sleep_sleepstart-15 {
+    background-position: -7680px -2048px;
+}
+.sprite-sleep_sleepstart-16 {
+    background-position: -8192px -2048px;
+}
+.sprite-sleep_sleepstart-17 {
+    background-position: -8704px -2048px;
+}
+.sprite-sleep_sleepstart-18 {
+    background-position: -9216px -2048px;
+}
+.sprite-sleep_sleepstart-19 {
+    background-position: -9728px -2048px;
+}
+.sprite-sleep_sleepstart-20 {
+    background-position: -10240px -2048px;
+}
+.sprite-sleep_sleepstart-21 {
+    background-position: -10752px -2048px;
+}
+.sprite-sleep_sleepstart-22 {
+    background-position: -11264px -2048px;
+}
+.sprite-sleep_sleepstart-23 {
+    background-position: -11776px -2048px;
+}
+.sprite-sleep_sleepstart-24 {
+    background-position: -12288px -2048px;
+}
+.sprite-sleep_sleepstart-25 {
+    background-position: -12800px -2048px;
+}
+.sprite-sleep_sleepstart-26 {
+    background-position: -13312px -2048px;
+}
+.sprite-sleep_sleepstart-27 {
+    background-position: -13824px -2048px;
+}
+.sprite-sleep_sleepstart-28 {
+    background-position: -14336px -2048px;
+}
+.sprite-sleep_sleepstart-29 {
+    background-position: -14848px -2048px;
+}
+.sprite-sleep_sleepstart-30 {
+    background-position: -15360px -2048px;
+}
+.sprite-sleep_sleepstart-31 {
+    background-position: -15872px -2048px;
+}
+.sprite-sleep_sleepstart-32 {
+    background-position: -16384px -2048px;
+}
+.sprite-sleep_sleepstart-33 {
+    background-position: -16896px -2048px;
+}
+.sprite-sleep_sleepstart-34 {
+    background-position: -17408px -2048px;
+}
+.sprite-sleep_sleepstart-35 {
+    background-position: -17920px -2048px;
+}
+.sprite-sleep_sleepstart-36 {
+    background-position: -18432px -2048px;
+}
+.sprite-sleep_sleepstart-37 {
+    background-position: -18944px -2048px;
+}
+.sprite-sleep_sleepstart-38 {
+    background-position: -19456px -2048px;
+}
+.sprite-sleep_sleepstart-39 {
+    background-position: -19968px -2048px;
+}
+.sprite-sleep_sleepstart-40 {
+    background-position: -20480px -2048px;
+}
+.sprite-sleep_sleepwake-0 {
+    background-position: -0px -2560px;
+}
+.sprite-sleep_sleepwake-1 {
+    background-position: -512px -2560px;
+}
+.sprite-sleep_sleepwake-2 {
+    background-position: -1024px -2560px;
+}
+.sprite-sleep_sleepwake-3 {
+    background-position: -1536px -2560px;
+}
+.sprite-sleep_sleepwake-4 {
+    background-position: -2048px -2560px;
+}
+.sprite-sleep_sleepwake-5 {
+    background-position: -2560px -2560px;
+}
+.sprite-sleep_sleepwake-6 {
+    background-position: -3072px -2560px;
+}
+.sprite-sleep_sleepwake-7 {
+    background-position: -3584px -2560px;
+}
+.sprite-sleep_sleepwake-8 {
+    background-position: -4096px -2560px;
+}
+.sprite-sleep_sleepwake-9 {
+    background-position: -4608px -2560px;
+}
+.sprite-sleep_sleepwake-10 {
+    background-position: -5120px -2560px;
+}
+.sprite-sleep_sleepwake-11 {
+    background-position: -5632px -2560px;
+}
+.sprite-sleep_sleepwake-12 {
+    background-position: -6144px -2560px;
+}
+.sprite-sleep_sleepwake-13 {
+    background-position: -6656px -2560px;
+}
+.sprite-sleep_sleepwake-14 {
+    background-position: -7168px -2560px;
+}
+.sprite-sleep_sleepwake-15 {
+    background-position: -7680px -2560px;
+}
+.sprite-sleep_sleepwake-16 {
+    background-position: -8192px -2560px;
+}
+.sprite-sleep_sleepwake-17 {
+    background-position: -8704px -2560px;
+}
+.sprite-sleep_sleepwake-18 {
+    background-position: -9216px -2560px;
+}
+.sprite-sleep_sleepwake-19 {
+    background-position: -9728px -2560px;
+}
+.sprite-sleep_sleepwake-20 {
+    background-position: -10240px -2560px;
+}
+.sprite-sleep_sleepwake-21 {
+    background-position: -10752px -2560px;
+}
+.sprite-sleep_sleepwake-22 {
+    background-position: -11264px -2560px;
+}
+.sprite-sleep_sleepwake-23 {
+    background-position: -11776px -2560px;
+}
+.sprite-sleep_sleepwake-24 {
+    background-position: -12288px -2560px;
+}
+.sprite-sleep_sleepwake-25 {
+    background-position: -12800px -2560px;
+}
+.sprite-sleep_sleepwake-26 {
+    background-position: -13312px -2560px;
+}
+.sprite-sleep_sleepwake-27 {
+    background-position: -13824px -2560px;
+}
+.sprite-sleep_sleepwake-28 {
+    background-position: -14336px -2560px;
+}
+.sprite-sleep_sleepwake-29 {
+    background-position: -14848px -2560px;
+}
+.sprite-sleep_sleepwake-30 {
+    background-position: -15360px -2560px;
+}
+.sprite-sleep_sleepwake-31 {
+    background-position: -15872px -2560px;
+}
+.sprite-sleep_sleepwake-32 {
+    background-position: -16384px -2560px;
+}
+.sprite-sleep_sleepwake-33 {
+    background-position: -16896px -2560px;
+}
+.sprite-sleep_sleepwake-34 {
+    background-position: -17408px -2560px;
+}
+.sprite-sleep_sleepwake-35 {
+    background-position: -17920px -2560px;
+}
+.sprite-sleep_sleepwake-36 {
+    background-position: -18432px -2560px;
+}
+.sprite-clean_dirty-0 {
+    background-position: -0px -3072px;
+}
+.sprite-clean_dirty-1 {
+    background-position: -512px -3072px;
+}
+.sprite-clean_dirty-2 {
+    background-position: -1024px -3072px;
+}
+.sprite-clean_dirty-3 {
+    background-position: -1536px -3072px;
+}
+.sprite-clean_dirty-4 {
+    background-position: -2048px -3072px;
+}
+.sprite-clean_dirty-5 {
+    background-position: -2560px -3072px;
+}
+.sprite-clean_dirty-6 {
+    background-position: -3072px -3072px;
+}
+.sprite-clean_dirty-7 {
+    background-position: -3584px -3072px;
+}
+.sprite-clean_dirty-8 {
+    background-position: -4096px -3072px;
+}
+.sprite-clean_dirty-9 {
+    background-position: -4608px -3072px;
+}
+.sprite-clean_dirty-10 {
+    background-position: -5120px -3072px;
+}
+.sprite-clean_dirty-11 {
+    background-position: -5632px -3072px;
+}
+.sprite-clean_dirty-12 {
+    background-position: -6144px -3072px;
+}
+.sprite-clean_dirty-13 {
+    background-position: -6656px -3072px;
+}
+.sprite-clean_dirty-14 {
+    background-position: -7168px -3072px;
+}
+.sprite-clean_dirty-15 {
+    background-position: -7680px -3072px;
+}
+.sprite-clean_dirty-16 {
+    background-position: -8192px -3072px;
+}
+.sprite-clean_dirty-17 {
+    background-position: -8704px -3072px;
+}
+.sprite-clean_dirty-18 {
+    background-position: -9216px -3072px;
+}
+.sprite-clean_dirty-19 {
+    background-position: -9728px -3072px;
+}
+.sprite-clean_dirty-20 {
+    background-position: -10240px -3072px;
+}
+.sprite-clean_dirty-21 {
+    background-position: -10752px -3072px;
+}
+.sprite-clean_dirty-22 {
+    background-position: -11264px -3072px;
+}
+.sprite-clean_dirty-23 {
+    background-position: -11776px -3072px;
+}
+.sprite-clean_dirty-24 {
+    background-position: -12288px -3072px;
+}
+.sprite-clean_dirty-25 {
+    background-position: -12800px -3072px;
+}
+.sprite-clean_dirty-26 {
+    background-position: -13312px -3072px;
+}
+.sprite-clean_dirty-27 {
+    background-position: -13824px -3072px;
+}
+.sprite-clean_dirty-28 {
+    background-position: -14336px -3072px;
+}
+.sprite-clean_dirty-29 {
+    background-position: -14848px -3072px;
+}
+.sprite-clean_dirty-30 {
+    background-position: -15360px -3072px;
+}
+.sprite-clean_dirty-31 {
+    background-position: -15872px -3072px;
+}
+.sprite-clean_dirty-32 {
+    background-position: -16384px -3072px;
+}
+.sprite-clean_dirty-33 {
+    background-position: -16896px -3072px;
+}
+.sprite-clean_dirty-34 {
+    background-position: -17408px -3072px;
+}
+.sprite-clean_dirty-35 {
+    background-position: -17920px -3072px;
+}
+.sprite-clean_dirty-36 {
+    background-position: -18432px -3072px;
+}
+.sprite-clean_dirty-37 {
+    background-position: -18944px -3072px;
+}
+.sprite-clean_dirty-38 {
+    background-position: -19456px -3072px;
+}
+.sprite-clean_dirty-39 {
+    background-position: -19968px -3072px;
+}
+.sprite-clean_dirty-40 {
+    background-position: -20480px -3072px;
+}
+.sprite-clean_dirty-41 {
+    background-position: -20992px -3072px;
+}
+.sprite-clean_dirty-42 {
+    background-position: -21504px -3072px;
+}
+.sprite-clean_dirty-43 {
+    background-position: -22016px -3072px;
+}
+.sprite-clean_dirty-44 {
+    background-position: -22528px -3072px;
+}
+.sprite-clean_dirty-45 {
+    background-position: -23040px -3072px;
+}
+.sprite-clean_dirty-46 {
+    background-position: -23552px -3072px;
+}
+.sprite-clean_dirty-47 {
+    background-position: -24064px -3072px;
+}
+.sprite-clean_dirty-48 {
+    background-position: -24576px -3072px;
+}
+.sprite-clean_dirty-49 {
+    background-position: -25088px -3072px;
+}
+.sprite-clean_dirty-50 {
+    background-position: -25600px -3072px;
+}
+.sprite-clean_dirty-51 {
+    background-position: -26112px -3072px;
+}
+.sprite-clean_dirty-52 {
+    background-position: -26624px -3072px;
+}
+.sprite-clean_dirty-53 {
+    background-position: -27136px -3072px;
+}
+.sprite-clean_dirty-54 {
+    background-position: -27648px -3072px;
+}
+.sprite-clean_dirty-55 {
+    background-position: -28160px -3072px;
+}
+.sprite-clean_dirty-56 {
+    background-position: -28672px -3072px;
+}
+.sprite-clean_dirty-57 {
+    background-position: -29184px -3072px;
+}
+.sprite-clean_dirty-58 {
+    background-position: -29696px -3072px;
+}
+.sprite-clean_dirty-59 {
+    background-position: -30208px -3072px;
+}
+.sprite-clean_dirty-60 {
+    background-position: -30720px -3072px;
+}
+.sprite-clean_dirty-61 {
+    background-position: -31232px -3072px;
+}
+.sprite-clean_dirty-62 {
+    background-position: -31744px -3072px;
+}
+.sprite-clean_dirty-63 {
+    background-position: -32256px -3072px;
+}
+.sprite-clean_dirty-64 {
+    background-position: -32768px -3072px;
+}
+.sprite-clean_dirty-65 {
+    background-position: -33280px -3072px;
+}
+.sprite-clean_dirty-66 {
+    background-position: -33792px -3072px;
+}
+.sprite-clean_dirty-67 {
+    background-position: -34304px -3072px;
+}
+.sprite-clean_dirty-68 {
+    background-position: -34816px -3072px;
+}
+.sprite-clean_dirty-69 {
+    background-position: -35328px -3072px;
+}
+.sprite-clean_dirty-70 {
+    background-position: -35840px -3072px;
+}
+.sprite-clean_dirty-71 {
+    background-position: -36352px -3072px;
+}
+.sprite-clean_dirty-72 {
+    background-position: -36864px -3072px;
+}
+.sprite-clean_dirty-73 {
+    background-position: -37376px -3072px;
+}
+.sprite-clean_dirty-74 {
+    background-position: -37888px -3072px;
+}
+.sprite-clean_dirty-75 {
+    background-position: -38400px -3072px;
+}
+.sprite-clean_dirty-76 {
+    background-position: -38912px -3072px;
+}
+.sprite-clean_dirty-77 {
+    background-position: -39424px -3072px;
+}
+.sprite-clean_dirty-78 {
+    background-position: -39936px -3072px;
+}
+.sprite-clean_dirty-79 {
+    background-position: -40448px -3072px;
+}
+.sprite-clean_dirty2-0 {
+    background-position: -0px -3584px;
+}
+.sprite-clean_dirty2-1 {
+    background-position: -512px -3584px;
+}
+.sprite-clean_dirty2-2 {
+    background-position: -1024px -3584px;
+}
+.sprite-clean_dirty2-3 {
+    background-position: -1536px -3584px;
+}
+.sprite-clean_dirty2-4 {
+    background-position: -2048px -3584px;
+}
+.sprite-clean_dirty2-5 {
+    background-position: -2560px -3584px;
+}
+.sprite-clean_dirty2-6 {
+    background-position: -3072px -3584px;
+}
+.sprite-clean_dirty2-7 {
+    background-position: -3584px -3584px;
+}
+.sprite-clean_dirty2-8 {
+    background-position: -4096px -3584px;
+}
+.sprite-clean_dirty2-9 {
+    background-position: -4608px -3584px;
+}
+.sprite-clean_dirty2-10 {
+    background-position: -5120px -3584px;
+}
+.sprite-clean_dirty2-11 {
+    background-position: -5632px -3584px;
+}
+.sprite-clean_dirty2-12 {
+    background-position: -6144px -3584px;
+}
+.sprite-clean_dirty2-13 {
+    background-position: -6656px -3584px;
+}
+.sprite-clean_dirty2-14 {
+    background-position: -7168px -3584px;
+}
+.sprite-clean_dirty2-15 {
+    background-position: -7680px -3584px;
+}
+.sprite-clean_dirty2-16 {
+    background-position: -8192px -3584px;
+}
+.sprite-clean_dirty2-17 {
+    background-position: -8704px -3584px;
+}
+.sprite-clean_dirty2-18 {
+    background-position: -9216px -3584px;
+}
+.sprite-clean_dirty2-19 {
+    background-position: -9728px -3584px;
+}
+.sprite-clean_dirty2-20 {
+    background-position: -10240px -3584px;
+}
+.sprite-clean_dirty2-21 {
+    background-position: -10752px -3584px;
+}
+.sprite-clean_dirty2-22 {
+    background-position: -11264px -3584px;
+}
+.sprite-clean_dirty2-23 {
+    background-position: -11776px -3584px;
+}
+.sprite-clean_dirty2-24 {
+    background-position: -12288px -3584px;
+}
+.sprite-clean_dirty2-25 {
+    background-position: -12800px -3584px;
+}
+.sprite-clean_dirty2-26 {
+    background-position: -13312px -3584px;
+}
+.sprite-clean_dirty2-27 {
+    background-position: -13824px -3584px;
+}
+.sprite-clean_dirty2-28 {
+    background-position: -14336px -3584px;
+}
+.sprite-clean_dirty2-29 {
+    background-position: -14848px -3584px;
+}
+.sprite-clean_dirty2-30 {
+    background-position: -15360px -3584px;
+}
+.sprite-clean_dirty2-31 {
+    background-position: -15872px -3584px;
+}
+.sprite-clean_dirty2-32 {
+    background-position: -16384px -3584px;
+}
+.sprite-clean_dirty2-33 {
+    background-position: -16896px -3584px;
+}
+.sprite-clean_dirty2-34 {
+    background-position: -17408px -3584px;
+}
+.sprite-clean_dirty2-35 {
+    background-position: -17920px -3584px;
+}
+.sprite-clean_dirty2-36 {
+    background-position: -18432px -3584px;
+}
+.sprite-clean_dirty2-37 {
+    background-position: -18944px -3584px;
+}
+.sprite-clean_dirty2-38 {
+    background-position: -19456px -3584px;
+}
+.sprite-clean_dirty2-39 {
+    background-position: -19968px -3584px;
+}
+.sprite-clean_dirty2-40 {
+    background-position: -20480px -3584px;
+}
+.sprite-clean_dirty2-41 {
+    background-position: -20992px -3584px;
+}
+.sprite-clean_dirty2-42 {
+    background-position: -21504px -3584px;
+}
+.sprite-clean_dirty2-43 {
+    background-position: -22016px -3584px;
+}
+.sprite-clean_dirty2-44 {
+    background-position: -22528px -3584px;
+}
+.sprite-clean_dirty2-45 {
+    background-position: -23040px -3584px;
+}
+.sprite-clean_dirty2-46 {
+    background-position: -23552px -3584px;
+}
+.sprite-clean_dirty2-47 {
+    background-position: -24064px -3584px;
+}
+.sprite-clean_dirty2-48 {
+    background-position: -24576px -3584px;
+}
+.sprite-clean_dirty2-49 {
+    background-position: -25088px -3584px;
+}
+.sprite-clean_dirty2-50 {
+    background-position: -25600px -3584px;
+}
+.sprite-clean_dirty2-51 {
+    background-position: -26112px -3584px;
+}
+.sprite-clean_dirty2-52 {
+    background-position: -26624px -3584px;
+}
+.sprite-clean_dirty2-53 {
+    background-position: -27136px -3584px;
+}
+.sprite-clean_dirty2-54 {
+    background-position: -27648px -3584px;
+}
+.sprite-clean_dirty2-55 {
+    background-position: -28160px -3584px;
+}
+.sprite-clean_dirty2-56 {
+    background-position: -28672px -3584px;
+}
+.sprite-clean_dirty2-57 {
+    background-position: -29184px -3584px;
+}
+.sprite-clean_dirty2-58 {
+    background-position: -29696px -3584px;
+}
+.sprite-clean_dirty2-59 {
+    background-position: -30208px -3584px;
+}
+.sprite-clean_dirty2-60 {
+    background-position: -30720px -3584px;
+}
+.sprite-clean_dirty2-61 {
+    background-position: -31232px -3584px;
+}
+.sprite-clean_dirty2-62 {
+    background-position: -31744px -3584px;
+}
+.sprite-clean_dirty2-63 {
+    background-position: -32256px -3584px;
+}
+.sprite-clean_dirty2-64 {
+    background-position: -32768px -3584px;
+}
+.sprite-clean_dirty2-65 {
+    background-position: -33280px -3584px;
+}
+.sprite-clean_dirty2-66 {
+    background-position: -33792px -3584px;
+}
+.sprite-clean_dirty2-67 {
+    background-position: -34304px -3584px;
+}
+.sprite-clean_dirty2-68 {
+    background-position: -34816px -3584px;
+}
+.sprite-clean_dirty2-69 {
+    background-position: -35328px -3584px;
+}
+.sprite-clean_dirty2-70 {
+    background-position: -35840px -3584px;
+}
+.sprite-clean_dirty2-71 {
+    background-position: -36352px -3584px;
+}
+.sprite-clean_dirty2-72 {
+    background-position: -36864px -3584px;
+}
+.sprite-clean_dirty2-73 {
+    background-position: -37376px -3584px;
+}
+.sprite-clean_dirty2-74 {
+    background-position: -37888px -3584px;
+}
+.sprite-clean_dirty2-75 {
+    background-position: -38400px -3584px;
+}
+.sprite-clean_dirty2-76 {
+    background-position: -38912px -3584px;
+}
+.sprite-clean_dirty2-77 {
+    background-position: -39424px -3584px;
+}
+.sprite-clean_dirty2-78 {
+    background-position: -39936px -3584px;
+}
+.sprite-clean_dirty2-79 {
+    background-position: -40448px -3584px;
+}
+.sprite-clean_shower-0 {
+    background-position: -0px -4096px;
+}
+.sprite-clean_shower-1 {
+    background-position: -512px -4096px;
+}
+.sprite-clean_shower-2 {
+    background-position: -1024px -4096px;
+}
+.sprite-clean_shower-3 {
+    background-position: -1536px -4096px;
+}
+.sprite-clean_shower-4 {
+    background-position: -2048px -4096px;
+}
+.sprite-clean_shower-5 {
+    background-position: -2560px -4096px;
+}
+.sprite-clean_shower-6 {
+    background-position: -3072px -4096px;
+}
+.sprite-clean_shower-7 {
+    background-position: -3584px -4096px;
+}
+.sprite-clean_shower-8 {
+    background-position: -4096px -4096px;
+}
+.sprite-clean_shower-9 {
+    background-position: -4608px -4096px;
+}
+.sprite-clean_shower-10 {
+    background-position: -5120px -4096px;
+}
+.sprite-clean_shower-11 {
+    background-position: -5632px -4096px;
+}
+.sprite-clean_shower-12 {
+    background-position: -6144px -4096px;
+}
+.sprite-clean_shower-13 {
+    background-position: -6656px -4096px;
+}
+.sprite-clean_shower-14 {
+    background-position: -7168px -4096px;
+}
+.sprite-clean_shower-15 {
+    background-position: -7680px -4096px;
+}
+.sprite-clean_shower-16 {
+    background-position: -8192px -4096px;
+}
+.sprite-clean_shower-17 {
+    background-position: -8704px -4096px;
+}
+.sprite-clean_shower-18 {
+    background-position: -9216px -4096px;
+}
+.sprite-clean_shower-19 {
+    background-position: -9728px -4096px;
+}
+.sprite-clean_shower-20 {
+    background-position: -10240px -4096px;
+}
+.sprite-clean_shower-21 {
+    background-position: -10752px -4096px;
+}
+.sprite-clean_shower-22 {
+    background-position: -11264px -4096px;
+}
+.sprite-clean_shower-23 {
+    background-position: -11776px -4096px;
+}
+.sprite-clean_shower-24 {
+    background-position: -12288px -4096px;
+}
+.sprite-clean_shower-25 {
+    background-position: -12800px -4096px;
+}
+.sprite-clean_shower-26 {
+    background-position: -13312px -4096px;
+}
+.sprite-clean_shower-27 {
+    background-position: -13824px -4096px;
+}
+.sprite-clean_shower-28 {
+    background-position: -14336px -4096px;
+}
+.sprite-clean_shower-29 {
+    background-position: -14848px -4096px;
+}
+.sprite-clean_shower-30 {
+    background-position: -15360px -4096px;
+}
+.sprite-clean_shower-31 {
+    background-position: -15872px -4096px;
+}
+.sprite-clean_shower-32 {
+    background-position: -16384px -4096px;
+}
+.sprite-clean_shower-33 {
+    background-position: -16896px -4096px;
+}
+.sprite-clean_shower-34 {
+    background-position: -17408px -4096px;
+}
+.sprite-clean_shower-35 {
+    background-position: -17920px -4096px;
+}
+.sprite-clean_shower-36 {
+    background-position: -18432px -4096px;
+}
+.sprite-clean_shower-37 {
+    background-position: -18944px -4096px;
+}
+.sprite-clean_shower-38 {
+    background-position: -19456px -4096px;
+}
+.sprite-clean_shower-39 {
+    background-position: -19968px -4096px;
+}
+.sprite-clean_shower-40 {
+    background-position: -20480px -4096px;
+}
+.sprite-clean_shower-41 {
+    background-position: -20992px -4096px;
+}
+.sprite-clean_shower-42 {
+    background-position: -21504px -4096px;
+}
+.sprite-clean_shower-43 {
+    background-position: -22016px -4096px;
+}
+.sprite-clean_shower-44 {
+    background-position: -22528px -4096px;
+}
+.sprite-clean_shower-45 {
+    background-position: -23040px -4096px;
+}
+.sprite-clean_shower-46 {
+    background-position: -23552px -4096px;
+}
+.sprite-clean_shower-47 {
+    background-position: -24064px -4096px;
+}
+.sprite-clean_shower-48 {
+    background-position: -24576px -4096px;
+}
+.sprite-clean_shower-49 {
+    background-position: -25088px -4096px;
+}
+.sprite-clean_shower-50 {
+    background-position: -25600px -4096px;
+}
+.sprite-clean_shower-51 {
+    background-position: -26112px -4096px;
+}
+.sprite-clean_shower-52 {
+    background-position: -26624px -4096px;
+}
+.sprite-clean_shower-53 {
+    background-position: -27136px -4096px;
+}
+.sprite-clean_shower-54 {
+    background-position: -27648px -4096px;
+}
+.sprite-clean_shower-55 {
+    background-position: -28160px -4096px;
+}
+.sprite-clean_shower-56 {
+    background-position: -28672px -4096px;
+}
+.sprite-clean_shower-57 {
+    background-position: -29184px -4096px;
+}
+.sprite-clean_shower-58 {
+    background-position: -29696px -4096px;
+}
+.sprite-clean_shower-59 {
+    background-position: -30208px -4096px;
+}
+.sprite-clean_shower-60 {
+    background-position: -30720px -4096px;
+}
+.sprite-clean_shower-61 {
+    background-position: -31232px -4096px;
+}
+.sprite-clean_shower-62 {
+    background-position: -31744px -4096px;
+}
+.sprite-clean_shower-63 {
+    background-position: -32256px -4096px;
+}
+.sprite-clean_shower-64 {
+    background-position: -32768px -4096px;
+}
+.sprite-clean_shower-65 {
+    background-position: -33280px -4096px;
+}
+.sprite-clean_shower-66 {
+    background-position: -33792px -4096px;
+}
+.sprite-clean_shower-67 {
+    background-position: -34304px -4096px;
+}
+.sprite-clean_shower-68 {
+    background-position: -34816px -4096px;
+}
+.sprite-clean_shower-69 {
+    background-position: -35328px -4096px;
+}
+.sprite-clean_shower-70 {
+    background-position: -35840px -4096px;
+}
+.sprite-clean_shower-71 {
+    background-position: -36352px -4096px;
+}
+.sprite-clean_shower-72 {
+    background-position: -36864px -4096px;
+}
+.sprite-clean_shower-73 {
+    background-position: -37376px -4096px;
+}
+.sprite-clean_shower-74 {
+    background-position: -37888px -4096px;
+}
+.sprite-clean_shower-75 {
+    background-position: -38400px -4096px;
+}
+.sprite-clean_shower-76 {
+    background-position: -38912px -4096px;
+}
+.sprite-clean_shower-77 {
+    background-position: -39424px -4096px;
+}
+.sprite-clean_shower-78 {
+    background-position: -39936px -4096px;
+}
+.sprite-clean_shower-79 {
+    background-position: -40448px -4096px;
+}
