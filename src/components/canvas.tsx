@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   combinedConfig,
   type SpriteSheetMeta,
@@ -35,6 +35,7 @@ const Canvas: React.FC = () => {
     targetLoops: 1,
     lastFrameTime: 0,
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   // Load animations from combined config with custom FPS settings
   const config = combinedConfig as SpriteSheetMeta;
@@ -111,8 +112,6 @@ const Canvas: React.FC = () => {
       canvas.width = window.innerWidth * 0.8;
       canvas.height = window.innerHeight * 0.6;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      //   ctx.fillStyle = "transparent";
-      //   ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
     resizeCanvas();
@@ -120,6 +119,13 @@ const Canvas: React.FC = () => {
 
     if (!spriteSheetRef.current) {
       spriteSheetRef.current = new Image();
+      spriteSheetRef.current.onload = () => {
+        setIsLoading(false);
+      };
+      spriteSheetRef.current.onerror = () => {
+        console.error("Failed to load sprite sheet");
+        setIsLoading(false);
+      };
       spriteSheetRef.current.src = "/sheets/combined-sprite.png";
     }
 
@@ -223,12 +229,22 @@ const Canvas: React.FC = () => {
     }, {} as Record<string, string[]>);
 
   return (
-    <div className="flex flex-col items-center w-full max-w-lg">
-      <canvas ref={canvasRef} />
+    <div className="flex flex-col items-center w-full max-w-lg relative">
+      {isLoading ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-opacity-75">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin" />
+            <p className="text-green-600 font-medium">Loading kitty...</p>
+          </div>
+        </div>
+      ) : null}
+      
+      <canvas ref={canvasRef} className={isLoading ? "opacity-0" : "opacity-100"} />
       <div className="flex flex-col items-center w-full max-w-md p-4 gap-4">
         <select
-          className=" text-black w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="text-black w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
           onChange={(e) => playAnimation(e.target.value)}
+          disabled={isLoading}
         >
           <option value="">Select animation</option>
           {Object.entries(animationsByCategory).map(
@@ -246,7 +262,7 @@ const Canvas: React.FC = () => {
 
         <div className="flex gap-2">
           <button
-            className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => {
               const select = document.querySelector(
                 "select"
@@ -255,12 +271,13 @@ const Canvas: React.FC = () => {
                 playAnimation(select.value);
               }
             }}
+            disabled={isLoading}
           >
             Play
           </button>
 
           <button
-            className="flex items-center justify-center px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+            className="flex items-center justify-center px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => {
               const select = document.querySelector(
                 "select"
@@ -269,12 +286,13 @@ const Canvas: React.FC = () => {
                 playAnimation(select.value, 2);
               }
             }}
+            disabled={isLoading}
           >
             2x
           </button>
 
           <button
-            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => {
               const select = document.querySelector(
                 "select"
@@ -283,13 +301,15 @@ const Canvas: React.FC = () => {
                 playAnimation(select.value, -1);
               }
             }}
+            disabled={isLoading}
           >
             🔄
           </button>
 
           <button
-            className="flex items-center justify-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+            className="flex items-center justify-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={stopAnimation}
+            disabled={isLoading}
           >
             ⏹️
           </button>
