@@ -47,7 +47,7 @@ async function createCombinedSpriteSheet(): Promise<void> {
   }, cliProgress.Presets.shades_classic);
 
   const publicDir = path.join(process.cwd(), "public");
-  const animationsDir = path.join(publicDir, "animations");
+  const animationsDir = path.join(process.cwd(), "animations");
   const outputDir = path.join(publicDir, "sheets");
 
   await fs.mkdir(outputDir, { recursive: true });
@@ -141,15 +141,18 @@ async function createCombinedSpriteSheet(): Promise<void> {
 
   const compositeBar = multibar.create(1, 0, { name: 'Generating sprite sheet' });
 
-  // Calculate sprite sheet dimensions
+  // Calculate sprite sheet dimensions differently
+  // First, find the longest animation
   const maxFramesPerAnimation = Math.max(
     ...meta.animations.map((a) => a.frameCount)
   );
   const frameWidth = meta.animations[0].frameWidth;
   const frameHeight = meta.animations[0].frameHeight;
 
+  // Width needs to accommodate the longest animation
   meta.width = frameWidth * maxFramesPerAnimation;
-  meta.height = frameHeight * currentRowIndex; // Use total number of animations
+  // Height is simply number of animations times frame height
+  meta.height = frameHeight * meta.animations.length;
 
   // Create sprite sheet
   const background = sharp({
@@ -161,17 +164,34 @@ async function createCombinedSpriteSheet(): Promise<void> {
     },
   });
 
-  // Place frames on sprite sheet
-  const compositeOperations = await Promise.all(
-    optimizedFrames.map(async (frame, index) => {
-      const row = Math.floor(index / maxFramesPerAnimation);
-      const col = index % maxFramesPerAnimation;
-      return {
-        input: await frame.toBuffer(),
-        top: row * frameHeight,
-        left: col * frameWidth,
-      };
-    })
+  // Place frames on sprite sheet - modified positioning logic
+  const compositeOperations = [];
+  let currentFrame = 0;
+
+  for (const animation of meta.animations) {
+    // Get the frames for this animation
+    const animationFrames = optimizedFrames.slice(
+      currentFrame,
+      currentFrame + animation.frameCount
+    );
+
+    // Place each frame of this animation on its row
+    const operations = animationFrames.map((frame, index) => ({
+      input: frame,
+      top: animation.rowIndex * frameHeight,
+      left: index * frameWidth,
+    }));
+
+    compositeOperations.push(...operations);
+    currentFrame += animation.frameCount;
+  }
+
+  // Convert Sharp instances to Buffers
+  const compositeOps = await Promise.all(
+    compositeOperations.map(async (op) => ({
+      ...op,
+      input: await op.input.toBuffer(),
+    }))
   );
 
   // Generate files
@@ -179,7 +199,7 @@ async function createCombinedSpriteSheet(): Promise<void> {
     await Promise.all([
       // Save sprite sheet
       background
-        .composite(compositeOperations)
+        .composite(compositeOps)
         .png({ quality: 80 })
         .toFile(path.join(outputDir, "combined-sprite.png")),
 

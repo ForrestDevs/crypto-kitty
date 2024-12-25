@@ -14,15 +14,29 @@ interface AnimationConfig {
   frameWidth: number;
   frameHeight: number;
   rowIndex: number;
+  fps?: number; // Frames per second for this animation
+}
+
+interface AnimationState {
+  name: AnimationName | "idle";
+  currentFrame: number;
+  loopCount: number;
+  targetLoops: number; // -1 for infinite
+  lastFrameTime: number;
 }
 
 const Canvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | undefined>(undefined);
-  const currentFrameRef = useRef<number>(0);
-  const currentAnimationRef = useRef<AnimationName | "idle">("idle");
+  const animationStateRef = useRef<AnimationState>({
+    name: "idle",
+    currentFrame: 0,
+    loopCount: 0,
+    targetLoops: 1,
+    lastFrameTime: 0,
+  });
 
-  // Load animations from combined config
+  // Load animations from combined config with custom FPS settings
   const config = combinedConfig as SpriteSheetMeta;
   const animations: Record<string, AnimationConfig> = {
     idle: {
@@ -31,6 +45,7 @@ const Canvas: React.FC = () => {
       frameWidth: config.animations[0].frameWidth,
       frameHeight: config.animations[0].frameHeight,
       rowIndex: 0,
+      fps: 30,
     },
     ...Object.fromEntries(
       config.animations.map((anim) => [
@@ -41,6 +56,7 @@ const Canvas: React.FC = () => {
           frameWidth: anim.frameWidth,
           frameHeight: anim.frameHeight,
           rowIndex: anim.rowIndex,
+          fps: getFpsForAnimation(anim.name), // Helper function to set custom FPS
         },
       ])
     ),
@@ -48,9 +64,40 @@ const Canvas: React.FC = () => {
 
   const spriteSheetRef = useRef<HTMLImageElement | null>(null);
 
-  const playAnimation = (animationName: AnimationName) => {
-    currentAnimationRef.current = animationName;
-    currentFrameRef.current = 0;
+  // Helper function to set custom FPS for different animations
+  function getFpsForAnimation(name: string): number {
+    switch (name) {
+      //   case "eat_eating":
+      //     return 24;
+      //   case "eat_hungry":
+      //     return 12;
+      //   case "sleep_sleeping":
+      //     return 8;
+      // Add more cases as needed
+      default:
+        return 60; // Default FPS
+    }
+  }
+
+  const playAnimation = (animationName: AnimationName, loops: number = 1) => {
+    animationStateRef.current = {
+      name: animationName,
+      currentFrame: 0,
+      loopCount: 0,
+      targetLoops: loops,
+      lastFrameTime: 0,
+    };
+  };
+
+  // Helper to stop current animation
+  const stopAnimation = () => {
+    animationStateRef.current = {
+      name: "idle",
+      currentFrame: 0,
+      loopCount: 0,
+      targetLoops: 1,
+      lastFrameTime: 0,
+    };
   };
 
   useEffect(() => {
@@ -63,8 +110,9 @@ const Canvas: React.FC = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth * 0.8;
       canvas.height = window.innerHeight * 0.6;
-      ctx.fillStyle = "#87CEEB";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //   ctx.fillStyle = "transparent";
+      //   ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
     resizeCanvas();
@@ -75,8 +123,28 @@ const Canvas: React.FC = () => {
       spriteSheetRef.current.src = "/sheets/combined-sprite.png";
     }
 
-    let lastFrameTime = 0;
-    const frameInterval = 0.005;
+    const drawFrame = (
+      animation: AnimationConfig,
+      frameIndex: number,
+      x: number,
+      y: number
+    ) => {
+      if (!ctx || !spriteSheetRef.current?.complete) return;
+
+      const safeFrameIndex = Math.min(frameIndex, animation.frameCount - 1);
+
+      ctx.drawImage(
+        spriteSheetRef.current,
+        safeFrameIndex * animation.frameWidth,
+        animation.rowIndex * animation.frameHeight,
+        animation.frameWidth,
+        animation.frameHeight,
+        x,
+        y,
+        animation.frameWidth,
+        animation.frameHeight
+      );
+    };
 
     const animate = (timestamp: number) => {
       if (!ctx || !spriteSheetRef.current?.complete) {
@@ -84,41 +152,51 @@ const Canvas: React.FC = () => {
         return;
       }
 
-      const elapsed = timestamp - lastFrameTime;
+      const state = animationStateRef.current;
+      const currentAnimation = animations[state.name];
+      const frameInterval = 1000 / (currentAnimation.fps || 30);
+
+      // Check if enough time has passed for next frame
+      const elapsed = timestamp - state.lastFrameTime;
       if (elapsed < frameInterval) {
         animationFrameRef.current = requestAnimationFrame(animate);
         return;
       }
 
-      ctx.fillStyle = "#87CEEB";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear and draw background
+      //   ctx.fillStyle = "transparent";
+      //   ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const currentAnimation = animations[currentAnimationRef.current];
-      const destX = canvas.width / 2 - currentAnimation.frameWidth / 2;
+      const destX = canvas.width / 2 - currentAnimation.frameWidth / 2 - 25;
       const destY = canvas.height / 2 - currentAnimation.frameHeight / 2;
 
+      // Draw current frame
       ctx.globalCompositeOperation = "source-over";
-      ctx.drawImage(
-        spriteSheetRef.current,
-        currentFrameRef.current * currentAnimation.frameWidth,
-        currentAnimation.rowIndex * currentAnimation.frameHeight,
-        currentAnimation.frameWidth,
-        currentAnimation.frameHeight,
-        destX,
-        destY,
-        currentAnimation.frameWidth,
-        currentAnimation.frameHeight
-      );
+      drawFrame(currentAnimation, state.currentFrame, destX, destY);
 
-      if (currentAnimationRef.current !== "idle") {
-        currentFrameRef.current =
-          (currentFrameRef.current + 1) % currentAnimation.frameCount;
-        if (currentFrameRef.current === 0) {
-          currentAnimationRef.current = "idle";
+      // Update animation state
+      if (state.name !== "idle") {
+        if (state.currentFrame >= currentAnimation.frameCount - 1) {
+          // Animation cycle complete
+          if (
+            state.targetLoops === -1 ||
+            state.loopCount < state.targetLoops - 1
+          ) {
+            // Continue looping
+            state.currentFrame = 0;
+            state.loopCount++;
+          } else {
+            // Animation complete
+            stopAnimation();
+          }
+        } else {
+          // Next frame
+          state.currentFrame++;
         }
       }
 
-      lastFrameTime = timestamp;
+      state.lastFrameTime = timestamp;
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -145,70 +223,78 @@ const Canvas: React.FC = () => {
     }, {} as Record<string, string[]>);
 
   return (
-    <div className="canvas-container">
-      <canvas
-        ref={canvasRef}
-        style={{
-          border: "2px solid black",
-          borderRadius: "8px",
-        }}
-      />
-      <div className="controls-container">
-        {Object.entries(animationsByCategory).map(([category, animations]) => (
-          <div key={category} className="category-controls">
-            <h3>{category}</h3>
-            <div className="controls">
-              {animations.map((animName) => (
-                <button key={animName} onClick={() => playAnimation(animName)}>
-                  {animName.split("_")[1]}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
+    <div className="flex flex-col items-center w-full max-w-lg">
+      <canvas ref={canvasRef} />
+      <div className="flex flex-col items-center w-full max-w-md p-4 gap-4">
+        <select
+          className=" text-black w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          onChange={(e) => playAnimation(e.target.value)}
+        >
+          <option value="">Select animation</option>
+          {Object.entries(animationsByCategory).map(
+            ([category, animations]) => (
+              <optgroup key={category} label={category.toUpperCase()}>
+                {animations.map((animName) => (
+                  <option key={animName} value={animName}>
+                    {animName.split("_")[1]}
+                  </option>
+                ))}
+              </optgroup>
+            )
+          )}
+        </select>
+
+        <div className="flex gap-2">
+          <button
+            className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            onClick={() => {
+              const select = document.querySelector(
+                "select"
+              ) as HTMLSelectElement;
+              if (select.value) {
+                playAnimation(select.value);
+              }
+            }}
+          >
+            Play
+          </button>
+
+          <button
+            className="flex items-center justify-center px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+            onClick={() => {
+              const select = document.querySelector(
+                "select"
+              ) as HTMLSelectElement;
+              if (select.value) {
+                playAnimation(select.value, 2);
+              }
+            }}
+          >
+            2x
+          </button>
+
+          <button
+            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            onClick={() => {
+              const select = document.querySelector(
+                "select"
+              ) as HTMLSelectElement;
+              if (select.value) {
+                playAnimation(select.value, -1);
+              }
+            }}
+          >
+            🔄
+          </button>
+
+          <button
+            className="flex items-center justify-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+            onClick={stopAnimation}
+          >
+            ⏹️
+          </button>
+        </div>
       </div>
-      <style jsx>{`
-        .canvas-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-          padding: 20px;
-        }
-        .controls-container {
-          display: flex;
-          gap: 20px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .category-controls {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-        .controls {
-          display: flex;
-          gap: 10px;
-        }
-        h3 {
-          margin: 0;
-          text-transform: capitalize;
-          color: #333;
-        }
-        button {
-          padding: 10px 20px;
-          border-radius: 5px;
-          border: none;
-          background-color: #4caf50;
-          color: white;
-          cursor: pointer;
-          text-transform: capitalize;
-        }
-        button:hover {
-          background-color: #45a049;
-        }
-      `}</style>
     </div>
   );
 };
