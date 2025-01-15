@@ -27,8 +27,8 @@ const GameWrapper: React.FC = () => {
         
         // Get container dimensions
         const containerWidth = container.clientWidth;
-        const maxWidth = Math.min(containerWidth, 900); // Max width of 900px
-        const height = maxWidth * (400/900); // Maintain 900:400 aspect ratio
+        const maxWidth = Math.min(containerWidth, 1920); // Max width of 900px
+        const height = maxWidth * (1440/1920); // Maintain 900:400 aspect ratio
         
         // Set canvas size
         canvas.style.width = `${maxWidth}px`;
@@ -81,11 +81,11 @@ const GameWrapper: React.FC = () => {
   const handleRestart = () => gameRef.current?.restart();
 
   return (
-    <div ref={containerRef} className="">
+    <div ref={containerRef} className="w-full">
       <div className="flex flex-col gap-4">
         <canvas 
           ref={canvasRef}
-          className="rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg overflow-hidden"
         />
         <GameUI
           gameState={gameState}

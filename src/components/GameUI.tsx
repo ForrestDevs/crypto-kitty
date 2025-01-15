@@ -56,7 +56,7 @@ export const GameUI: React.FC<GameUIProps> = ({
   onRestart,
 }) => {
   return (
-    <div className="absolute inset-x-0 bottom-0 p-4 bg-white/10 backdrop-blur-sm">
+    <div className="p-4">
       <div className="max-w-md mx-auto space-y-4">
         {/* Status Bars */}
         <div className="space-y-2">
@@ -141,7 +141,7 @@ export const GameUI: React.FC<GameUIProps> = ({
 
       {/* Game Over Modal */}
       {gameState.isGameOver && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+        <div className="h-screen fixed inset-0 translate-y-[-68.7%] flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg text-center w-[90%] max-w-md mx-4">
             <h2 className="text-2xl font-bold mb-4">Game Over!</h2>
             <button

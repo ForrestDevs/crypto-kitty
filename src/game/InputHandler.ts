@@ -31,13 +31,7 @@ export class InputHandler {
     if (!state.isDirty) {
       this.game
         .getAnimator()
-        .queueAnimation("sleep_sleepstart", AnimationPriority.NORMAL);
-      this.game
-        .getAnimator()
-        .queueAnimation("sleep_sleeping", AnimationPriority.NORMAL, 2);
-      this.game
-        .getAnimator()
-        .queueAnimation("sleep_sleepwake", AnimationPriority.NORMAL);
+        .queueAnimation("sleep_full", AnimationPriority.URGENT);
       this.game.getGameState().energy = 100;
     }
   }

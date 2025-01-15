@@ -1,14 +1,663 @@
 {
   "name": "combined",
-  "width": 41984,
-  "height": 6144,
+  "width": 81920,
+  "height": 5120,
   "animations": [
+    {
+      "name": "sleep_full",
+      "frameWidth": 512,
+      "frameHeight": 512,
+      "frameCount": 160,
+      "rowIndex": 0,
+      "frames": [
+        {
+          "name": "sleep_full_0",
+          "number": 0
+        },
+        {
+          "name": "sleep_full_1",
+          "number": 1
+        },
+        {
+          "name": "sleep_full_2",
+          "number": 2
+        },
+        {
+          "name": "sleep_full_3",
+          "number": 3
+        },
+        {
+          "name": "sleep_full_4",
+          "number": 4
+        },
+        {
+          "name": "sleep_full_5",
+          "number": 5
+        },
+        {
+          "name": "sleep_full_6",
+          "number": 6
+        },
+        {
+          "name": "sleep_full_7",
+          "number": 7
+        },
+        {
+          "name": "sleep_full_8",
+          "number": 8
+        },
+        {
+          "name": "sleep_full_9",
+          "number": 9
+        },
+        {
+          "name": "sleep_full_10",
+          "number": 10
+        },
+        {
+          "name": "sleep_full_11",
+          "number": 11
+        },
+        {
+          "name": "sleep_full_12",
+          "number": 12
+        },
+        {
+          "name": "sleep_full_13",
+          "number": 13
+        },
+        {
+          "name": "sleep_full_14",
+          "number": 14
+        },
+        {
+          "name": "sleep_full_15",
+          "number": 15
+        },
+        {
+          "name": "sleep_full_16",
+          "number": 16
+        },
+        {
+          "name": "sleep_full_17",
+          "number": 17
+        },
+        {
+          "name": "sleep_full_18",
+          "number": 18
+        },
+        {
+          "name": "sleep_full_19",
+          "number": 19
+        },
+        {
+          "name": "sleep_full_20",
+          "number": 20
+        },
+        {
+          "name": "sleep_full_21",
+          "number": 21
+        },
+        {
+          "name": "sleep_full_22",
+          "number": 22
+        },
+        {
+          "name": "sleep_full_23",
+          "number": 23
+        },
+        {
+          "name": "sleep_full_24",
+          "number": 24
+        },
+        {
+          "name": "sleep_full_25",
+          "number": 25
+        },
+        {
+          "name": "sleep_full_26",
+          "number": 26
+        },
+        {
+          "name": "sleep_full_27",
+          "number": 27
+        },
+        {
+          "name": "sleep_full_28",
+          "number": 28
+        },
+        {
+          "name": "sleep_full_29",
+          "number": 29
+        },
+        {
+          "name": "sleep_full_30",
+          "number": 30
+        },
+        {
+          "name": "sleep_full_31",
+          "number": 31
+        },
+        {
+          "name": "sleep_full_32",
+          "number": 32
+        },
+        {
+          "name": "sleep_full_33",
+          "number": 33
+        },
+        {
+          "name": "sleep_full_34",
+          "number": 34
+        },
+        {
+          "name": "sleep_full_35",
+          "number": 35
+        },
+        {
+          "name": "sleep_full_36",
+          "number": 36
+        },
+        {
+          "name": "sleep_full_37",
+          "number": 37
+        },
+        {
+          "name": "sleep_full_38",
+          "number": 38
+        },
+        {
+          "name": "sleep_full_39",
+          "number": 39
+        },
+        {
+          "name": "sleep_full_40",
+          "number": 40
+        },
+        {
+          "name": "sleep_full_41",
+          "number": 41
+        },
+        {
+          "name": "sleep_full_42",
+          "number": 42
+        },
+        {
+          "name": "sleep_full_43",
+          "number": 43
+        },
+        {
+          "name": "sleep_full_44",
+          "number": 44
+        },
+        {
+          "name": "sleep_full_45",
+          "number": 45
+        },
+        {
+          "name": "sleep_full_46",
+          "number": 46
+        },
+        {
+          "name": "sleep_full_47",
+          "number": 47
+        },
+        {
+          "name": "sleep_full_48",
+          "number": 48
+        },
+        {
+          "name": "sleep_full_49",
+          "number": 49
+        },
+        {
+          "name": "sleep_full_50",
+          "number": 50
+        },
+        {
+          "name": "sleep_full_51",
+          "number": 51
+        },
+        {
+          "name": "sleep_full_52",
+          "number": 52
+        },
+        {
+          "name": "sleep_full_53",
+          "number": 53
+        },
+        {
+          "name": "sleep_full_54",
+          "number": 54
+        },
+        {
+          "name": "sleep_full_55",
+          "number": 55
+        },
+        {
+          "name": "sleep_full_56",
+          "number": 56
+        },
+        {
+          "name": "sleep_full_57",
+          "number": 57
+        },
+        {
+          "name": "sleep_full_58",
+          "number": 58
+        },
+        {
+          "name": "sleep_full_59",
+          "number": 59
+        },
+        {
+          "name": "sleep_full_60",
+          "number": 60
+        },
+        {
+          "name": "sleep_full_61",
+          "number": 61
+        },
+        {
+          "name": "sleep_full_62",
+          "number": 62
+        },
+        {
+          "name": "sleep_full_63",
+          "number": 63
+        },
+        {
+          "name": "sleep_full_64",
+          "number": 64
+        },
+        {
+          "name": "sleep_full_65",
+          "number": 65
+        },
+        {
+          "name": "sleep_full_66",
+          "number": 66
+        },
+        {
+          "name": "sleep_full_67",
+          "number": 67
+        },
+        {
+          "name": "sleep_full_68",
+          "number": 68
+        },
+        {
+          "name": "sleep_full_69",
+          "number": 69
+        },
+        {
+          "name": "sleep_full_70",
+          "number": 70
+        },
+        {
+          "name": "sleep_full_71",
+          "number": 71
+        },
+        {
+          "name": "sleep_full_72",
+          "number": 72
+        },
+        {
+          "name": "sleep_full_73",
+          "number": 73
+        },
+        {
+          "name": "sleep_full_74",
+          "number": 74
+        },
+        {
+          "name": "sleep_full_75",
+          "number": 75
+        },
+        {
+          "name": "sleep_full_76",
+          "number": 76
+        },
+        {
+          "name": "sleep_full_77",
+          "number": 77
+        },
+        {
+          "name": "sleep_full_78",
+          "number": 78
+        },
+        {
+          "name": "sleep_full_79",
+          "number": 79
+        },
+        {
+          "name": "sleep_full_80",
+          "number": 80
+        },
+        {
+          "name": "sleep_full_81",
+          "number": 81
+        },
+        {
+          "name": "sleep_full_82",
+          "number": 82
+        },
+        {
+          "name": "sleep_full_83",
+          "number": 83
+        },
+        {
+          "name": "sleep_full_84",
+          "number": 84
+        },
+        {
+          "name": "sleep_full_85",
+          "number": 85
+        },
+        {
+          "name": "sleep_full_86",
+          "number": 86
+        },
+        {
+          "name": "sleep_full_87",
+          "number": 87
+        },
+        {
+          "name": "sleep_full_88",
+          "number": 88
+        },
+        {
+          "name": "sleep_full_89",
+          "number": 89
+        },
+        {
+          "name": "sleep_full_90",
+          "number": 90
+        },
+        {
+          "name": "sleep_full_91",
+          "number": 91
+        },
+        {
+          "name": "sleep_full_92",
+          "number": 92
+        },
+        {
+          "name": "sleep_full_93",
+          "number": 93
+        },
+        {
+          "name": "sleep_full_94",
+          "number": 94
+        },
+        {
+          "name": "sleep_full_95",
+          "number": 95
+        },
+        {
+          "name": "sleep_full_96",
+          "number": 96
+        },
+        {
+          "name": "sleep_full_97",
+          "number": 97
+        },
+        {
+          "name": "sleep_full_98",
+          "number": 98
+        },
+        {
+          "name": "sleep_full_99",
+          "number": 99
+        },
+        {
+          "name": "sleep_full_100",
+          "number": 100
+        },
+        {
+          "name": "sleep_full_101",
+          "number": 101
+        },
+        {
+          "name": "sleep_full_102",
+          "number": 102
+        },
+        {
+          "name": "sleep_full_103",
+          "number": 103
+        },
+        {
+          "name": "sleep_full_104",
+          "number": 104
+        },
+        {
+          "name": "sleep_full_105",
+          "number": 105
+        },
+        {
+          "name": "sleep_full_106",
+          "number": 106
+        },
+        {
+          "name": "sleep_full_107",
+          "number": 107
+        },
+        {
+          "name": "sleep_full_108",
+          "number": 108
+        },
+        {
+          "name": "sleep_full_109",
+          "number": 109
+        },
+        {
+          "name": "sleep_full_110",
+          "number": 110
+        },
+        {
+          "name": "sleep_full_111",
+          "number": 111
+        },
+        {
+          "name": "sleep_full_112",
+          "number": 112
+        },
+        {
+          "name": "sleep_full_113",
+          "number": 113
+        },
+        {
+          "name": "sleep_full_114",
+          "number": 114
+        },
+        {
+          "name": "sleep_full_115",
+          "number": 115
+        },
+        {
+          "name": "sleep_full_116",
+          "number": 116
+        },
+        {
+          "name": "sleep_full_117",
+          "number": 117
+        },
+        {
+          "name": "sleep_full_118",
+          "number": 118
+        },
+        {
+          "name": "sleep_full_119",
+          "number": 119
+        },
+        {
+          "name": "sleep_full_120",
+          "number": 120
+        },
+        {
+          "name": "sleep_full_121",
+          "number": 121
+        },
+        {
+          "name": "sleep_full_122",
+          "number": 122
+        },
+        {
+          "name": "sleep_full_123",
+          "number": 123
+        },
+        {
+          "name": "sleep_full_124",
+          "number": 124
+        },
+        {
+          "name": "sleep_full_125",
+          "number": 125
+        },
+        {
+          "name": "sleep_full_126",
+          "number": 126
+        },
+        {
+          "name": "sleep_full_127",
+          "number": 127
+        },
+        {
+          "name": "sleep_full_128",
+          "number": 128
+        },
+        {
+          "name": "sleep_full_129",
+          "number": 129
+        },
+        {
+          "name": "sleep_full_130",
+          "number": 130
+        },
+        {
+          "name": "sleep_full_131",
+          "number": 131
+        },
+        {
+          "name": "sleep_full_132",
+          "number": 132
+        },
+        {
+          "name": "sleep_full_133",
+          "number": 133
+        },
+        {
+          "name": "sleep_full_134",
+          "number": 134
+        },
+        {
+          "name": "sleep_full_135",
+          "number": 135
+        },
+        {
+          "name": "sleep_full_136",
+          "number": 136
+        },
+        {
+          "name": "sleep_full_137",
+          "number": 137
+        },
+        {
+          "name": "sleep_full_138",
+          "number": 138
+        },
+        {
+          "name": "sleep_full_139",
+          "number": 139
+        },
+        {
+          "name": "sleep_full_140",
+          "number": 140
+        },
+        {
+          "name": "sleep_full_141",
+          "number": 141
+        },
+        {
+          "name": "sleep_full_142",
+          "number": 142
+        },
+        {
+          "name": "sleep_full_143",
+          "number": 143
+        },
+        {
+          "name": "sleep_full_144",
+          "number": 144
+        },
+        {
+          "name": "sleep_full_145",
+          "number": 145
+        },
+        {
+          "name": "sleep_full_146",
+          "number": 146
+        },
+        {
+          "name": "sleep_full_147",
+          "number": 147
+        },
+        {
+          "name": "sleep_full_148",
+          "number": 148
+        },
+        {
+          "name": "sleep_full_149",
+          "number": 149
+        },
+        {
+          "name": "sleep_full_150",
+          "number": 150
+        },
+        {
+          "name": "sleep_full_151",
+          "number": 151
+        },
+        {
+          "name": "sleep_full_152",
+          "number": 152
+        },
+        {
+          "name": "sleep_full_153",
+          "number": 153
+        },
+        {
+          "name": "sleep_full_154",
+          "number": 154
+        },
+        {
+          "name": "sleep_full_155",
+          "number": 155
+        },
+        {
+          "name": "sleep_full_156",
+          "number": 156
+        },
+        {
+          "name": "sleep_full_157",
+          "number": 157
+        },
+        {
+          "name": "sleep_full_158",
+          "number": 158
+        },
+        {
+          "name": "sleep_full_159",
+          "number": 159
+        }
+      ]
+    },
     {
       "name": "idle_idle",
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 1,
-      "rowIndex": 0,
+      "rowIndex": 1,
       "frames": [
         {
           "name": "eating_00320.png",
@@ -21,7 +670,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 1,
-      "rowIndex": 1,
+      "rowIndex": 2,
       "frames": [
         {
           "name": "dirtytwo_00239.png",
@@ -34,7 +683,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 2,
+      "rowIndex": 3,
       "frames": [
         {
           "name": "eating_00320.png",
@@ -363,7 +1012,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 3,
+      "rowIndex": 4,
       "frames": [
         {
           "name": "hungryone_00240.png",
@@ -692,7 +1341,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 79,
-      "rowIndex": 4,
+      "rowIndex": 5,
       "frames": [
         {
           "name": "allcombined_00561.png",
@@ -1009,343 +1658,6 @@
         {
           "name": "allcombined_00639.png",
           "number": 639
-        }
-      ]
-    },
-    {
-      "name": "sleep_sleeping",
-      "frameWidth": 512,
-      "frameHeight": 512,
-      "frameCount": 82,
-      "rowIndex": 5,
-      "frames": [
-        {
-          "name": "sleeping_00441.png",
-          "number": 441
-        },
-        {
-          "name": "sleeping_00442.png",
-          "number": 442
-        },
-        {
-          "name": "sleeping_00443.png",
-          "number": 443
-        },
-        {
-          "name": "sleeping_00444.png",
-          "number": 444
-        },
-        {
-          "name": "sleeping_00445.png",
-          "number": 445
-        },
-        {
-          "name": "sleeping_00446.png",
-          "number": 446
-        },
-        {
-          "name": "sleeping_00447.png",
-          "number": 447
-        },
-        {
-          "name": "sleeping_00448.png",
-          "number": 448
-        },
-        {
-          "name": "sleeping_00449.png",
-          "number": 449
-        },
-        {
-          "name": "sleeping_00450.png",
-          "number": 450
-        },
-        {
-          "name": "sleeping_00451.png",
-          "number": 451
-        },
-        {
-          "name": "sleeping_00452.png",
-          "number": 452
-        },
-        {
-          "name": "sleeping_00453.png",
-          "number": 453
-        },
-        {
-          "name": "sleeping_00454.png",
-          "number": 454
-        },
-        {
-          "name": "sleeping_00455.png",
-          "number": 455
-        },
-        {
-          "name": "sleeping_00456.png",
-          "number": 456
-        },
-        {
-          "name": "sleeping_00457.png",
-          "number": 457
-        },
-        {
-          "name": "sleeping_00458.png",
-          "number": 458
-        },
-        {
-          "name": "sleeping_00459.png",
-          "number": 459
-        },
-        {
-          "name": "sleeping_00460.png",
-          "number": 460
-        },
-        {
-          "name": "sleeping_00461.png",
-          "number": 461
-        },
-        {
-          "name": "sleeping_00462.png",
-          "number": 462
-        },
-        {
-          "name": "sleeping_00463.png",
-          "number": 463
-        },
-        {
-          "name": "sleeping_00464.png",
-          "number": 464
-        },
-        {
-          "name": "sleeping_00465.png",
-          "number": 465
-        },
-        {
-          "name": "sleeping_00466.png",
-          "number": 466
-        },
-        {
-          "name": "sleeping_00467.png",
-          "number": 467
-        },
-        {
-          "name": "sleeping_00468.png",
-          "number": 468
-        },
-        {
-          "name": "sleeping_00469.png",
-          "number": 469
-        },
-        {
-          "name": "sleeping_00470.png",
-          "number": 470
-        },
-        {
-          "name": "sleeping_00471.png",
-          "number": 471
-        },
-        {
-          "name": "sleeping_00472.png",
-          "number": 472
-        },
-        {
-          "name": "sleeping_00473.png",
-          "number": 473
-        },
-        {
-          "name": "sleeping_00474.png",
-          "number": 474
-        },
-        {
-          "name": "sleeping_00475.png",
-          "number": 475
-        },
-        {
-          "name": "sleeping_00476.png",
-          "number": 476
-        },
-        {
-          "name": "sleeping_00477.png",
-          "number": 477
-        },
-        {
-          "name": "sleeping_00478.png",
-          "number": 478
-        },
-        {
-          "name": "sleeping_00479.png",
-          "number": 479
-        },
-        {
-          "name": "sleeping_00480.png",
-          "number": 480
-        },
-        {
-          "name": "sleeping_00481.png",
-          "number": 481
-        },
-        {
-          "name": "sleeping_00482.png",
-          "number": 482
-        },
-        {
-          "name": "sleeping_00483.png",
-          "number": 483
-        },
-        {
-          "name": "sleeping_00484.png",
-          "number": 484
-        },
-        {
-          "name": "sleeping_00485.png",
-          "number": 485
-        },
-        {
-          "name": "sleeping_00486.png",
-          "number": 486
-        },
-        {
-          "name": "sleeping_00487.png",
-          "number": 487
-        },
-        {
-          "name": "sleeping_00488.png",
-          "number": 488
-        },
-        {
-          "name": "sleeping_00489.png",
-          "number": 489
-        },
-        {
-          "name": "sleeping_00490.png",
-          "number": 490
-        },
-        {
-          "name": "sleeping_00491.png",
-          "number": 491
-        },
-        {
-          "name": "sleeping_00492.png",
-          "number": 492
-        },
-        {
-          "name": "sleeping_00493.png",
-          "number": 493
-        },
-        {
-          "name": "sleeping_00494.png",
-          "number": 494
-        },
-        {
-          "name": "sleeping_00495.png",
-          "number": 495
-        },
-        {
-          "name": "sleeping_00496.png",
-          "number": 496
-        },
-        {
-          "name": "sleeping_00497.png",
-          "number": 497
-        },
-        {
-          "name": "sleeping_00498.png",
-          "number": 498
-        },
-        {
-          "name": "sleeping_00499.png",
-          "number": 499
-        },
-        {
-          "name": "sleeping_00500.png",
-          "number": 500
-        },
-        {
-          "name": "sleeping_00501.png",
-          "number": 501
-        },
-        {
-          "name": "sleeping_00502.png",
-          "number": 502
-        },
-        {
-          "name": "sleeping_00503.png",
-          "number": 503
-        },
-        {
-          "name": "sleeping_00504.png",
-          "number": 504
-        },
-        {
-          "name": "sleeping_00505.png",
-          "number": 505
-        },
-        {
-          "name": "sleeping_00506.png",
-          "number": 506
-        },
-        {
-          "name": "sleeping_00507.png",
-          "number": 507
-        },
-        {
-          "name": "sleeping_00508.png",
-          "number": 508
-        },
-        {
-          "name": "sleeping_00509.png",
-          "number": 509
-        },
-        {
-          "name": "sleeping_00510.png",
-          "number": 510
-        },
-        {
-          "name": "sleeping_00511.png",
-          "number": 511
-        },
-        {
-          "name": "sleeping_00512.png",
-          "number": 512
-        },
-        {
-          "name": "sleeping_00513.png",
-          "number": 513
-        },
-        {
-          "name": "sleeping_00514.png",
-          "number": 514
-        },
-        {
-          "name": "sleeping_00515.png",
-          "number": 515
-        },
-        {
-          "name": "sleeping_00516.png",
-          "number": 516
-        },
-        {
-          "name": "sleeping_00517.png",
-          "number": 517
-        },
-        {
-          "name": "sleeping_00518.png",
-          "number": 518
-        },
-        {
-          "name": "sleeping_00519.png",
-          "number": 519
-        },
-        {
-          "name": "sleeping_00520.png",
-          "number": 520
-        },
-        {
-          "name": "sleeping_00521.png",
-          "number": 521
-        },
-        {
-          "name": "sleeping_00522.png",
-          "number": 522
         }
       ]
     },
@@ -1675,341 +1987,11 @@
       ]
     },
     {
-      "name": "sleep_sleepstart",
-      "frameWidth": 512,
-      "frameHeight": 512,
-      "frameCount": 41,
-      "rowIndex": 7,
-      "frames": [
-        {
-          "name": "sleepstart_00400.png",
-          "number": 400
-        },
-        {
-          "name": "sleepstart_00401.png",
-          "number": 401
-        },
-        {
-          "name": "sleepstart_00402.png",
-          "number": 402
-        },
-        {
-          "name": "sleepstart_00403.png",
-          "number": 403
-        },
-        {
-          "name": "sleepstart_00404.png",
-          "number": 404
-        },
-        {
-          "name": "sleepstart_00405.png",
-          "number": 405
-        },
-        {
-          "name": "sleepstart_00406.png",
-          "number": 406
-        },
-        {
-          "name": "sleepstart_00407.png",
-          "number": 407
-        },
-        {
-          "name": "sleepstart_00408.png",
-          "number": 408
-        },
-        {
-          "name": "sleepstart_00409.png",
-          "number": 409
-        },
-        {
-          "name": "sleepstart_00410.png",
-          "number": 410
-        },
-        {
-          "name": "sleepstart_00411.png",
-          "number": 411
-        },
-        {
-          "name": "sleepstart_00412.png",
-          "number": 412
-        },
-        {
-          "name": "sleepstart_00413.png",
-          "number": 413
-        },
-        {
-          "name": "sleepstart_00414.png",
-          "number": 414
-        },
-        {
-          "name": "sleepstart_00415.png",
-          "number": 415
-        },
-        {
-          "name": "sleepstart_00416.png",
-          "number": 416
-        },
-        {
-          "name": "sleepstart_00417.png",
-          "number": 417
-        },
-        {
-          "name": "sleepstart_00418.png",
-          "number": 418
-        },
-        {
-          "name": "sleepstart_00419.png",
-          "number": 419
-        },
-        {
-          "name": "sleepstart_00420.png",
-          "number": 420
-        },
-        {
-          "name": "sleepstart_00421.png",
-          "number": 421
-        },
-        {
-          "name": "sleepstart_00422.png",
-          "number": 422
-        },
-        {
-          "name": "sleepstart_00423.png",
-          "number": 423
-        },
-        {
-          "name": "sleepstart_00424.png",
-          "number": 424
-        },
-        {
-          "name": "sleepstart_00425.png",
-          "number": 425
-        },
-        {
-          "name": "sleepstart_00426.png",
-          "number": 426
-        },
-        {
-          "name": "sleepstart_00427.png",
-          "number": 427
-        },
-        {
-          "name": "sleepstart_00428.png",
-          "number": 428
-        },
-        {
-          "name": "sleepstart_00429.png",
-          "number": 429
-        },
-        {
-          "name": "sleepstart_00430.png",
-          "number": 430
-        },
-        {
-          "name": "sleepstart_00431.png",
-          "number": 431
-        },
-        {
-          "name": "sleepstart_00432.png",
-          "number": 432
-        },
-        {
-          "name": "sleepstart_00433.png",
-          "number": 433
-        },
-        {
-          "name": "sleepstart_00434.png",
-          "number": 434
-        },
-        {
-          "name": "sleepstart_00435.png",
-          "number": 435
-        },
-        {
-          "name": "sleepstart_00436.png",
-          "number": 436
-        },
-        {
-          "name": "sleepstart_00437.png",
-          "number": 437
-        },
-        {
-          "name": "sleepstart_00438.png",
-          "number": 438
-        },
-        {
-          "name": "sleepstart_00439.png",
-          "number": 439
-        },
-        {
-          "name": "sleepstart_00440.png",
-          "number": 440
-        }
-      ]
-    },
-    {
-      "name": "sleep_sleepwake",
-      "frameWidth": 512,
-      "frameHeight": 512,
-      "frameCount": 37,
-      "rowIndex": 8,
-      "frames": [
-        {
-          "name": "sleepwake_00524.png",
-          "number": 524
-        },
-        {
-          "name": "sleepwake_00525.png",
-          "number": 525
-        },
-        {
-          "name": "sleepwake_00526.png",
-          "number": 526
-        },
-        {
-          "name": "sleepwake_00527.png",
-          "number": 527
-        },
-        {
-          "name": "sleepwake_00528.png",
-          "number": 528
-        },
-        {
-          "name": "sleepwake_00529.png",
-          "number": 529
-        },
-        {
-          "name": "sleepwake_00530.png",
-          "number": 530
-        },
-        {
-          "name": "sleepwake_00531.png",
-          "number": 531
-        },
-        {
-          "name": "sleepwake_00532.png",
-          "number": 532
-        },
-        {
-          "name": "sleepwake_00533.png",
-          "number": 533
-        },
-        {
-          "name": "sleepwake_00534.png",
-          "number": 534
-        },
-        {
-          "name": "sleepwake_00535.png",
-          "number": 535
-        },
-        {
-          "name": "sleepwake_00536.png",
-          "number": 536
-        },
-        {
-          "name": "sleepwake_00537.png",
-          "number": 537
-        },
-        {
-          "name": "sleepwake_00538.png",
-          "number": 538
-        },
-        {
-          "name": "sleepwake_00539.png",
-          "number": 539
-        },
-        {
-          "name": "sleepwake_00540.png",
-          "number": 540
-        },
-        {
-          "name": "sleepwake_00541.png",
-          "number": 541
-        },
-        {
-          "name": "sleepwake_00542.png",
-          "number": 542
-        },
-        {
-          "name": "sleepwake_00543.png",
-          "number": 543
-        },
-        {
-          "name": "sleepwake_00544.png",
-          "number": 544
-        },
-        {
-          "name": "sleepwake_00545.png",
-          "number": 545
-        },
-        {
-          "name": "sleepwake_00546.png",
-          "number": 546
-        },
-        {
-          "name": "sleepwake_00547.png",
-          "number": 547
-        },
-        {
-          "name": "sleepwake_00548.png",
-          "number": 548
-        },
-        {
-          "name": "sleepwake_00549.png",
-          "number": 549
-        },
-        {
-          "name": "sleepwake_00550.png",
-          "number": 550
-        },
-        {
-          "name": "sleepwake_00551.png",
-          "number": 551
-        },
-        {
-          "name": "sleepwake_00552.png",
-          "number": 552
-        },
-        {
-          "name": "sleepwake_00553.png",
-          "number": 553
-        },
-        {
-          "name": "sleepwake_00554.png",
-          "number": 554
-        },
-        {
-          "name": "sleepwake_00555.png",
-          "number": 555
-        },
-        {
-          "name": "sleepwake_00556.png",
-          "number": 556
-        },
-        {
-          "name": "sleepwake_00557.png",
-          "number": 557
-        },
-        {
-          "name": "sleepwake_00558.png",
-          "number": 558
-        },
-        {
-          "name": "sleepwake_00559.png",
-          "number": 559
-        },
-        {
-          "name": "sleepwake_00560.png",
-          "number": 560
-        }
-      ]
-    },
-    {
       "name": "clean_dirty",
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 9,
+      "rowIndex": 7,
       "frames": [
         {
           "name": "dirtyone_00080.png",
@@ -2338,7 +2320,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 10,
+      "rowIndex": 8,
       "frames": [
         {
           "name": "dirtytwo_00160.png",
@@ -2667,7 +2649,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 11,
+      "rowIndex": 9,
       "frames": [
         {
           "name": "shower_00000.png",

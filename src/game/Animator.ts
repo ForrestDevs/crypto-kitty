@@ -121,7 +121,7 @@ export class Animator {
     if (!spriteSheet?.complete) return;
 
     // Calculate scale based on canvas size
-    const baseWidth = 900;
+    const baseWidth = 1920;
     const scale = canvas.width / baseWidth;
 
     // Draw background
@@ -131,21 +131,21 @@ export class Animator {
 
     // Draw chair
     if (chair?.complete) {
-      const chairScale = 0.5 * scale;
+      const chairScale = 0.9 * scale;
       const scaledChairWidth = chair.width * chairScale;
       const scaledChairHeight = chair.height * chairScale;
       const chairX = canvas.width / 2 - scaledChairWidth / 2;
-      const chairY = canvas.height / 2 - scaledChairHeight / 2;
+      const chairY = canvas.height / 2 - scaledChairHeight / 2 + 200;
       ctx.drawImage(chair, chairX, chairY, scaledChairWidth, scaledChairHeight);
     }
 
     // Draw cat sprite
     const animation = this.animations[this.currentAnimation.name];
-    const catScale = 1 * scale;
+    const catScale = 2 * scale;
     const scaledWidth = animation.frameWidth * catScale;
     const scaledHeight = animation.frameHeight * catScale;
-    const destX = canvas.width / 2 - scaledWidth / 2 - (25 * scale);
-    const destY = canvas.height / 2 - scaledHeight / 2 - (50 * scale);
+    const destX = canvas.width / 2 - scaledWidth / 2 - (25 * scale) - 10;
+    const destY = canvas.height / 2 - scaledHeight / 2 - (50 * scale) - 150;
 
     ctx.drawImage(
       spriteSheet,

@@ -22,11 +22,23 @@ interface SpriteSheetMeta {
   animations: SpriteConfig[];
 }
 
+interface CombinedAnimation {
+  name: string;
+  parts: string[];
+}
+
+const COMBINED_ANIMATIONS: CombinedAnimation[] = [
+  {
+    name: "sleep_full",
+    parts: ["sleepstart", "sleeping", "sleepwake"],
+  },
+];
+
 async function optimizeImage(inputPath: string): Promise<Buffer> {
   return sharp(inputPath)
     .resize(512, 512, {
       fit: "contain",
-      background: { r: 0, g: 0, b: 0, alpha: 0 }
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
     })
     .png({ quality: 80 })
     .toBuffer();
@@ -40,11 +52,14 @@ function getFrameNumber(filename: string): number {
 
 async function createCombinedSpriteSheet(): Promise<void> {
   // Create progress bars
-  const multibar = new cliProgress.MultiBar({
-    clearOnComplete: false,
-    hideCursor: true,
-    format: '{bar} | {percentage}% | {value}/{total} | {name}',
-  }, cliProgress.Presets.shades_classic);
+  const multibar = new cliProgress.MultiBar(
+    {
+      clearOnComplete: false,
+      hideCursor: true,
+      format: "{bar} | {percentage}% | {value}/{total} | {name} | {status}",
+    },
+    cliProgress.Presets.shades_classic
+  );
 
   const publicDir = path.join(process.cwd(), "public");
   const animationsDir = path.join(process.cwd(), "animations");
@@ -60,16 +75,46 @@ async function createCombinedSpriteSheet(): Promise<void> {
     animations: [],
   };
 
-  // Get all category folders
+  // First, process combined animations
+  const combinedFrames: Map<string, Buffer[]> = new Map();
+
+  for (const combined of COMBINED_ANIMATIONS) {
+    const frames: Buffer[] = [];
+
+    // Collect frames from all parts in order
+    for (const part of combined.parts) {
+      const folderPath = path.join(animationsDir, part);
+      const partFrames = await fs.readdir(folderPath);
+
+      // Sort frames by number
+      const sortedFrames = partFrames.sort(
+        (a, b) => getFrameNumber(a) - getFrameNumber(b)
+      );
+
+      // Process each frame
+      for (const frame of sortedFrames) {
+        const framePath = path.join(folderPath, frame);
+        const optimizedBuffer = await optimizeImage(framePath);
+        frames.push(optimizedBuffer);
+      }
+    }
+
+    combinedFrames.set(combined.name, frames);
+  }
+
+  // Modify the categories to exclude combined animation parts
   const categories = {
     idle: ["idle", "idle2"],
-    eat: ["eating", "hungry", 'hungry2'],
-    sleep: ["sleeping", "sleepy", "sleepstart", "sleepwake"],
+    eat: ["eating", "hungry", "hungry2"],
+    sleep: ["sleepy"], // Remove individual sleep animations
     clean: ["dirty", "dirty2", "shower"],
   };
 
-  // Calculate total frames for progress bar
+  // Calculate total frames including combined animations
   let totalFrames = 0;
+  for (const frames of combinedFrames.values()) {
+    totalFrames += frames.length;
+  }
   for (const animationFolders of Object.values(categories)) {
     for (const folder of animationFolders) {
       const folderPath = path.join(animationsDir, folder);
@@ -78,20 +123,60 @@ async function createCombinedSpriteSheet(): Promise<void> {
     }
   }
 
-  const progressBar = multibar.create(totalFrames, 0, { name: 'Processing frames' });
-  const optimizeBar = multibar.create(totalFrames, 0, { name: 'Optimizing images' });
+  const progressBar = multibar.create(totalFrames, 0, {
+    name: "Processing frames",
+    status: "Starting...",
+  });
+  const optimizeBar = multibar.create(totalFrames, 0, {
+    name: "Optimizing images",
+    status: "Starting...",
+  });
+  const compositeBar = multibar.create(100, 0, {
+    name: "Generating sheet",
+    status: "Waiting...",
+  });
 
   let currentRowIndex = 0;
   let processedFrames = 0;
 
-  // Process all animations from all categories
+  // First, process combined animations
+  for (const [name, frames] of combinedFrames.entries()) {
+    const firstFrame = sharp(frames[0]);
+    const { width: frameWidth, height: frameHeight } =
+      await firstFrame.metadata();
+
+    meta.animations.push({
+      name,
+      frameWidth: frameWidth || 0,
+      frameHeight: frameHeight || 0,
+      frameCount: frames.length,
+      rowIndex: currentRowIndex,
+      frames: frames.map((_, index) => ({
+        name: `${name}_${index}`,
+        number: index,
+      })),
+    });
+
+    // Convert buffers to sharp instances
+    const sharpInstances = frames.map((buffer) => sharp(buffer));
+    optimizedFrames.push(...sharpInstances);
+
+    currentRowIndex++;
+    processedFrames += frames.length;
+    progressBar.update(processedFrames, {
+      status: `Processing combined animation: ${name}`,
+    });
+    optimizeBar.update(processedFrames);
+  }
+
+  // Then process regular animations
   for (const [category, animationFolders] of Object.entries(categories)) {
     for (const folder of animationFolders) {
       const folderPath = path.join(animationsDir, folder);
-      
+
       try {
         const unsortedFrames = await fs.readdir(folderPath);
-        
+
         const frames = unsortedFrames.sort((a, b) => {
           const numA = getFrameNumber(a);
           const numB = getFrameNumber(b);
@@ -106,13 +191,16 @@ async function createCombinedSpriteSheet(): Promise<void> {
           const optimizedBuffer = await optimizeImage(framePath);
           frameBuffers.push(optimizedBuffer);
           processedFrames++;
-          progressBar.update(processedFrames, { name: `Processing ${category}/${folder}` });
-          optimizeBar.update(processedFrames, { name: `Optimizing ${category}/${folder}` });
+          progressBar.update(processedFrames, {
+            status: `Processing ${category}/${folder}`,
+          });
+          optimizeBar.update(processedFrames);
         }
 
         // Get dimensions from first frame
         const firstFrame = sharp(frameBuffers[0]);
-        const { width: frameWidth, height: frameHeight } = await firstFrame.metadata();
+        const { width: frameWidth, height: frameHeight } =
+          await firstFrame.metadata();
 
         // Add to metadata
         meta.animations.push({
@@ -121,16 +209,15 @@ async function createCombinedSpriteSheet(): Promise<void> {
           frameHeight: frameHeight || 0,
           frameCount: frames.length,
           rowIndex: currentRowIndex,
-          frames: frames.map(frame => ({
+          frames: frames.map((frame) => ({
             name: frame,
-            number: getFrameNumber(frame)
-          }))
+            number: getFrameNumber(frame),
+          })),
         });
 
         // Convert buffers to sharp instances
         const sharpInstances = frameBuffers.map((buffer) => sharp(buffer));
         optimizedFrames.push(...sharpInstances);
-
       } catch (error) {
         console.error(`Error processing folder ${folderPath}:`, error);
         throw error;
@@ -140,7 +227,8 @@ async function createCombinedSpriteSheet(): Promise<void> {
     }
   }
 
-  const compositeBar = multibar.create(1, 0, { name: 'Generating sprite sheet' });
+  // Update sprite sheet generation progress
+  compositeBar.update(10, { status: "Calculating dimensions..." });
 
   // Calculate sprite sheet dimensions differently
   // First, find the longest animation
@@ -155,6 +243,8 @@ async function createCombinedSpriteSheet(): Promise<void> {
   // Height is simply number of animations times frame height
   meta.height = frameHeight * meta.animations.length;
 
+  compositeBar.update(30, { status: "Creating background..." });
+
   // Create sprite sheet
   const background = sharp({
     create: {
@@ -163,7 +253,10 @@ async function createCombinedSpriteSheet(): Promise<void> {
       channels: 4,
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     },
+    limitInputPixels: false,
   });
+
+  compositeBar.update(30, { status: "Preparing composite operations..." });
 
   // Place frames on sprite sheet - modified positioning logic
   const compositeOperations = [];
@@ -187,6 +280,8 @@ async function createCombinedSpriteSheet(): Promise<void> {
     currentFrame += animation.frameCount;
   }
 
+  compositeBar.update(50, { status: "Converting frames..." });
+
   // Convert Sharp instances to Buffers
   const compositeOps = await Promise.all(
     compositeOperations.map(async (op) => ({
@@ -195,6 +290,8 @@ async function createCombinedSpriteSheet(): Promise<void> {
     }))
   );
 
+  compositeBar.update(70, { status: "Generating final sprite sheet..." });
+
   // Generate files
   try {
     await Promise.all([
@@ -202,21 +299,32 @@ async function createCombinedSpriteSheet(): Promise<void> {
       background
         .composite(compositeOps)
         .png({ quality: 80 })
-        .toFile(path.join(outputDir, "combined-sprite.png")),
+        .toFile(path.join(outputDir, "combined-sprite.png"))
+        .then(() => {
+          compositeBar.update(80, { status: "Saving sprite sheet..." });
+        }),
 
       // Save config
-      fs.writeFile(
-        path.join(outputDir, "combined-config.json"),
-        JSON.stringify(meta, null, 2)
-      ),
+      fs
+        .writeFile(
+          path.join(outputDir, "combined-config.json"),
+          JSON.stringify(meta, null, 2)
+        )
+        .then(() => {
+          compositeBar.update(90, { status: "Saving config..." });
+        }),
 
       // Generate CSS
-      generateCombinedCSS(meta).then((css) =>
-        fs.writeFile(path.join(outputDir, "combined-sprites.css"), css)
-      ),
+      generateCombinedCSS(meta)
+        .then((css) =>
+          fs.writeFile(path.join(outputDir, "combined-sprites.css"), css)
+        )
+        .then(() => {
+          compositeBar.update(95, { status: "Generating CSS..." });
+        }),
     ]);
 
-    compositeBar.update(1);
+    compositeBar.update(100, { status: "Complete!" });
     multibar.stop();
     console.log("\nGenerated combined sprite sheet successfully!");
   } catch (error) {
@@ -249,13 +357,7 @@ function generateCombinedCSS(meta: SpriteSheetMeta): Promise<string> {
 }
 
 // Update exports
-export {
-  createCombinedSpriteSheet,
-  type SpriteConfig,
-  type SpriteSheetMeta,
-};
+export { createCombinedSpriteSheet, type SpriteConfig, type SpriteSheetMeta };
 
 // Run the combined generator
 createCombinedSpriteSheet();
-
-

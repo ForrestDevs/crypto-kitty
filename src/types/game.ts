@@ -24,9 +24,7 @@ export type AnimationName =
   | "eat_hungry"
   | "eat_hungry2"
   // Sleep animations
-  | "sleep_sleepstart"
-  | "sleep_sleeping"
-  | "sleep_sleepwake"
+  | "sleep_full"
   | "sleep_sleepy"
   // Cleaning animations
   | "clean_dirty"

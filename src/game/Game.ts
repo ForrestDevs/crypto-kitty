@@ -40,7 +40,7 @@ export class Game {
   }
 
   private resizeCanvas(): void {
-    const aspectRatio = 900 / 400;
+    const aspectRatio = 1920 / 1440;
     this.canvas.width = window.innerWidth * 0.98;
     this.canvas.height = this.canvas.width / aspectRatio;
   }
