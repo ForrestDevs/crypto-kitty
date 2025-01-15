@@ -30,19 +30,19 @@ export type AnimationName =
   | "clean_dirty"
   | "clean_dirty2"
   | "clean_shower";
-
+  
 export const THRESHOLDS = {
-  hungry1: 90,
-  hungry2: 60,
-  sleepy: 50,
-  dirty1: 80,
-  dirty2: 20,
+  hungry1: 80, // Lowered from 90 to give more time before first warning
+  hungry2: 50, // Lowered from 60 to space out the warnings better
+  sleepy: 45,  // Lowered slightly from 50 to balance with hunger
+  dirty1: 70,  // Lowered from 80 to give more time before first warning
+  dirty2: 30,  // Raised from 20 to trigger second warning sooner
 } as const;
 
 export const DECAY_RATES = {
-  hunger: 4,
-  energy: 3,
-  cleanliness: 2,
+  hunger: 3,    // Lowered from 4 to make food last longer
+  energy: 2,    // Lowered from 3 to require less frequent sleep
+  cleanliness: 2, // Kept the same as it was already balanced
 } as const;
 
 export interface GameStateData {
