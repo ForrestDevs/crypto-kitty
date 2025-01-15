@@ -1,14 +1,40 @@
 {
   "name": "combined",
   "width": 41984,
-  "height": 4608,
+  "height": 6144,
   "animations": [
+    {
+      "name": "idle_idle",
+      "frameWidth": 512,
+      "frameHeight": 512,
+      "frameCount": 1,
+      "rowIndex": 0,
+      "frames": [
+        {
+          "name": "eating_00320.png",
+          "number": 320
+        }
+      ]
+    },
+    {
+      "name": "idle_idle2",
+      "frameWidth": 512,
+      "frameHeight": 512,
+      "frameCount": 1,
+      "rowIndex": 1,
+      "frames": [
+        {
+          "name": "dirtytwo_00239.png",
+          "number": 239
+        }
+      ]
+    },
     {
       "name": "eat_eating",
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 0,
+      "rowIndex": 2,
       "frames": [
         {
           "name": "eating_00320.png",
@@ -337,7 +363,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 1,
+      "rowIndex": 3,
       "frames": [
         {
           "name": "hungryone_00240.png",
@@ -662,11 +688,336 @@
       ]
     },
     {
+      "name": "eat_hungry2",
+      "frameWidth": 512,
+      "frameHeight": 512,
+      "frameCount": 79,
+      "rowIndex": 4,
+      "frames": [
+        {
+          "name": "allcombined_00561.png",
+          "number": 561
+        },
+        {
+          "name": "allcombined_00562.png",
+          "number": 562
+        },
+        {
+          "name": "allcombined_00563.png",
+          "number": 563
+        },
+        {
+          "name": "allcombined_00564.png",
+          "number": 564
+        },
+        {
+          "name": "allcombined_00565.png",
+          "number": 565
+        },
+        {
+          "name": "allcombined_00566.png",
+          "number": 566
+        },
+        {
+          "name": "allcombined_00567.png",
+          "number": 567
+        },
+        {
+          "name": "allcombined_00568.png",
+          "number": 568
+        },
+        {
+          "name": "allcombined_00569.png",
+          "number": 569
+        },
+        {
+          "name": "allcombined_00570.png",
+          "number": 570
+        },
+        {
+          "name": "allcombined_00571.png",
+          "number": 571
+        },
+        {
+          "name": "allcombined_00572.png",
+          "number": 572
+        },
+        {
+          "name": "allcombined_00573.png",
+          "number": 573
+        },
+        {
+          "name": "allcombined_00574.png",
+          "number": 574
+        },
+        {
+          "name": "allcombined_00575.png",
+          "number": 575
+        },
+        {
+          "name": "allcombined_00576.png",
+          "number": 576
+        },
+        {
+          "name": "allcombined_00577.png",
+          "number": 577
+        },
+        {
+          "name": "allcombined_00578.png",
+          "number": 578
+        },
+        {
+          "name": "allcombined_00579.png",
+          "number": 579
+        },
+        {
+          "name": "allcombined_00580.png",
+          "number": 580
+        },
+        {
+          "name": "allcombined_00581.png",
+          "number": 581
+        },
+        {
+          "name": "allcombined_00582.png",
+          "number": 582
+        },
+        {
+          "name": "allcombined_00583.png",
+          "number": 583
+        },
+        {
+          "name": "allcombined_00584.png",
+          "number": 584
+        },
+        {
+          "name": "allcombined_00585.png",
+          "number": 585
+        },
+        {
+          "name": "allcombined_00586.png",
+          "number": 586
+        },
+        {
+          "name": "allcombined_00587.png",
+          "number": 587
+        },
+        {
+          "name": "allcombined_00588.png",
+          "number": 588
+        },
+        {
+          "name": "allcombined_00589.png",
+          "number": 589
+        },
+        {
+          "name": "allcombined_00590.png",
+          "number": 590
+        },
+        {
+          "name": "allcombined_00591.png",
+          "number": 591
+        },
+        {
+          "name": "allcombined_00592.png",
+          "number": 592
+        },
+        {
+          "name": "allcombined_00593.png",
+          "number": 593
+        },
+        {
+          "name": "allcombined_00594.png",
+          "number": 594
+        },
+        {
+          "name": "allcombined_00595.png",
+          "number": 595
+        },
+        {
+          "name": "allcombined_00596.png",
+          "number": 596
+        },
+        {
+          "name": "allcombined_00597.png",
+          "number": 597
+        },
+        {
+          "name": "allcombined_00598.png",
+          "number": 598
+        },
+        {
+          "name": "allcombined_00599.png",
+          "number": 599
+        },
+        {
+          "name": "allcombined_00600.png",
+          "number": 600
+        },
+        {
+          "name": "allcombined_00601.png",
+          "number": 601
+        },
+        {
+          "name": "allcombined_00602.png",
+          "number": 602
+        },
+        {
+          "name": "allcombined_00603.png",
+          "number": 603
+        },
+        {
+          "name": "allcombined_00604.png",
+          "number": 604
+        },
+        {
+          "name": "allcombined_00605.png",
+          "number": 605
+        },
+        {
+          "name": "allcombined_00606.png",
+          "number": 606
+        },
+        {
+          "name": "allcombined_00607.png",
+          "number": 607
+        },
+        {
+          "name": "allcombined_00608.png",
+          "number": 608
+        },
+        {
+          "name": "allcombined_00609.png",
+          "number": 609
+        },
+        {
+          "name": "allcombined_00610.png",
+          "number": 610
+        },
+        {
+          "name": "allcombined_00611.png",
+          "number": 611
+        },
+        {
+          "name": "allcombined_00612.png",
+          "number": 612
+        },
+        {
+          "name": "allcombined_00613.png",
+          "number": 613
+        },
+        {
+          "name": "allcombined_00614.png",
+          "number": 614
+        },
+        {
+          "name": "allcombined_00615.png",
+          "number": 615
+        },
+        {
+          "name": "allcombined_00616.png",
+          "number": 616
+        },
+        {
+          "name": "allcombined_00617.png",
+          "number": 617
+        },
+        {
+          "name": "allcombined_00618.png",
+          "number": 618
+        },
+        {
+          "name": "allcombined_00619.png",
+          "number": 619
+        },
+        {
+          "name": "allcombined_00620.png",
+          "number": 620
+        },
+        {
+          "name": "allcombined_00621.png",
+          "number": 621
+        },
+        {
+          "name": "allcombined_00622.png",
+          "number": 622
+        },
+        {
+          "name": "allcombined_00623.png",
+          "number": 623
+        },
+        {
+          "name": "allcombined_00624.png",
+          "number": 624
+        },
+        {
+          "name": "allcombined_00625.png",
+          "number": 625
+        },
+        {
+          "name": "allcombined_00626.png",
+          "number": 626
+        },
+        {
+          "name": "allcombined_00627.png",
+          "number": 627
+        },
+        {
+          "name": "allcombined_00628.png",
+          "number": 628
+        },
+        {
+          "name": "allcombined_00629.png",
+          "number": 629
+        },
+        {
+          "name": "allcombined_00630.png",
+          "number": 630
+        },
+        {
+          "name": "allcombined_00631.png",
+          "number": 631
+        },
+        {
+          "name": "allcombined_00632.png",
+          "number": 632
+        },
+        {
+          "name": "allcombined_00633.png",
+          "number": 633
+        },
+        {
+          "name": "allcombined_00634.png",
+          "number": 634
+        },
+        {
+          "name": "allcombined_00635.png",
+          "number": 635
+        },
+        {
+          "name": "allcombined_00636.png",
+          "number": 636
+        },
+        {
+          "name": "allcombined_00637.png",
+          "number": 637
+        },
+        {
+          "name": "allcombined_00638.png",
+          "number": 638
+        },
+        {
+          "name": "allcombined_00639.png",
+          "number": 639
+        }
+      ]
+    },
+    {
       "name": "sleep_sleeping",
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 82,
-      "rowIndex": 2,
+      "rowIndex": 5,
       "frames": [
         {
           "name": "sleeping_00441.png",
@@ -1003,7 +1354,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 79,
-      "rowIndex": 3,
+      "rowIndex": 6,
       "frames": [
         {
           "name": "wantingtosleep_00561.png",
@@ -1328,7 +1679,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 41,
-      "rowIndex": 4,
+      "rowIndex": 7,
       "frames": [
         {
           "name": "sleepstart_00400.png",
@@ -1501,7 +1852,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 37,
-      "rowIndex": 5,
+      "rowIndex": 8,
       "frames": [
         {
           "name": "sleepwake_00524.png",
@@ -1658,7 +2009,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 6,
+      "rowIndex": 9,
       "frames": [
         {
           "name": "dirtyone_00080.png",
@@ -1987,7 +2338,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 7,
+      "rowIndex": 10,
       "frames": [
         {
           "name": "dirtytwo_00160.png",
@@ -2316,7 +2667,7 @@
       "frameWidth": 512,
       "frameHeight": 512,
       "frameCount": 80,
-      "rowIndex": 8,
+      "rowIndex": 11,
       "frames": [
         {
           "name": "shower_00000.png",

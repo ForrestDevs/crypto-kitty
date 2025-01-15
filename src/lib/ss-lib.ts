@@ -62,7 +62,8 @@ async function createCombinedSpriteSheet(): Promise<void> {
 
   // Get all category folders
   const categories = {
-    eat: ["eating", "hungry"],
+    idle: ["idle", "idle2"],
+    eat: ["eating", "hungry", 'hungry2'],
     sleep: ["sleeping", "sleepy", "sleepstart", "sleepwake"],
     clean: ["dirty", "dirty2", "shower"],
   };
