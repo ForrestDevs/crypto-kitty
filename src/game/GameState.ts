@@ -1,4 +1,4 @@
-import { GameStateData, DECAY_RATES, THRESHOLDS, AnimationPriority } from "../types/game";
+import { GameStateData, DECAY_RATES, THRESHOLDS, AnimationPriority, AnimationName } from "../types/game";
 import { Animator } from "./Animator";
 
 export class GameState {
@@ -6,6 +6,19 @@ export class GameState {
   private lastUpdateTime: number;
   private readonly updateInterval = 1000; // Update every second
   private animator?: Animator; // Add reference to animator
+  private lastAnimationTimes: Record<AnimationName, number> = {
+    eat_eating: 0,
+    eat_hungry: 0,
+    eat_hungry2: 0,
+    sleep_full: 0,
+    sleep_sleepy: 0,
+    clean_dirty: 0,
+    clean_dirty2: 0,
+    clean_shower: 0,
+    idle_idle: 0,
+    idle_idle2: 0,
+  };
+  private readonly ANIMATION_COOLDOWN = 15000; // 15 seconds between repeated animations
 
   constructor() {
     this.state = this.getInitialState();
@@ -48,23 +61,57 @@ export class GameState {
       
       // Check thresholds and play animations
       if (this.animator) {
-        // Hunger animations
+        // Initial hunger threshold crossings
         if (prevHunger > THRESHOLDS.hungry2 && this.state.hunger <= THRESHOLDS.hungry2) {
           this.animator.queueAnimation("eat_hungry2", AnimationPriority.URGENT);
+          this.lastAnimationTimes.eat_hungry2 = currentTime;
         } else if (prevHunger > THRESHOLDS.hungry1 && this.state.hunger <= THRESHOLDS.hungry1) {
           this.animator.queueAnimation("eat_hungry", AnimationPriority.HIGH);
+          this.lastAnimationTimes.eat_hungry = currentTime;
         }
 
-        // Energy animations
+        // Periodic hunger animations
+        if (this.state.hunger <= THRESHOLDS.hungry2 && 
+            currentTime - this.lastAnimationTimes.eat_hungry2 >= this.ANIMATION_COOLDOWN) {
+          this.animator.queueAnimation("eat_hungry2", AnimationPriority.URGENT);
+          this.lastAnimationTimes.eat_hungry2 = currentTime;
+        } else if (this.state.hunger <= THRESHOLDS.hungry1 && 
+                   currentTime - this.lastAnimationTimes.eat_hungry >= this.ANIMATION_COOLDOWN) {
+          this.animator.queueAnimation("eat_hungry", AnimationPriority.HIGH);
+          this.lastAnimationTimes.eat_hungry = currentTime;
+        }
+
+        // Initial energy threshold crossing
         if (prevEnergy > THRESHOLDS.sleepy && this.state.energy <= THRESHOLDS.sleepy) {
           this.animator.queueAnimation("sleep_sleepy", AnimationPriority.HIGH);
+          this.lastAnimationTimes.sleep_sleepy = currentTime;
         }
 
-        // Cleanliness animations
+        // Periodic energy animation
+        if (this.state.energy <= THRESHOLDS.sleepy && 
+            currentTime - this.lastAnimationTimes.sleep_sleepy >= this.ANIMATION_COOLDOWN) {
+          this.animator.queueAnimation("sleep_sleepy", AnimationPriority.HIGH);
+          this.lastAnimationTimes.sleep_sleepy = currentTime;
+        }
+
+        // Initial cleanliness threshold crossings
         if (prevCleanliness > THRESHOLDS.dirty2 && this.state.cleanliness <= THRESHOLDS.dirty2) {
           this.animator.queueAnimation("clean_dirty2", AnimationPriority.URGENT);
+          this.lastAnimationTimes.clean_dirty2 = currentTime;
         } else if (prevCleanliness > THRESHOLDS.dirty1 && this.state.cleanliness <= THRESHOLDS.dirty1) {
           this.animator.queueAnimation("clean_dirty", AnimationPriority.HIGH);
+          this.lastAnimationTimes.clean_dirty = currentTime;
+        }
+
+        // Periodic cleanliness animations
+        if (this.state.cleanliness <= THRESHOLDS.dirty2 && 
+            currentTime - this.lastAnimationTimes.clean_dirty2 >= this.ANIMATION_COOLDOWN) {
+          this.animator.queueAnimation("clean_dirty2", AnimationPriority.URGENT);
+          this.lastAnimationTimes.clean_dirty2 = currentTime;
+        } else if (this.state.cleanliness <= THRESHOLDS.dirty1 && 
+                   currentTime - this.lastAnimationTimes.clean_dirty >= this.ANIMATION_COOLDOWN) {
+          this.animator.queueAnimation("clean_dirty", AnimationPriority.HIGH);
+          this.lastAnimationTimes.clean_dirty = currentTime;
         }
       }
       

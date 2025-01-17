@@ -17,6 +17,7 @@ const GameWrapper: React.FC = () => {
     isGameOver: false,
     isPaused: false
   });
+  const [showGameOverModal, setShowGameOverModal] = useState(false);
 
   // Handle responsive sizing
   useEffect(() => {
@@ -55,12 +56,18 @@ const GameWrapper: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (gameRef.current) {
-        setGameState(gameRef.current.getState());
+        const newState = gameRef.current.getState();
+        setGameState(newState);
+        
+        // Show game over modal when game ends
+        if (newState.isGameOver && !showGameOverModal) {
+          setShowGameOverModal(true);
+        }
       }
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [showGameOverModal]);
 
   useEffect(() => {
     if (canvasRef.current && !gameRef.current) {
@@ -78,7 +85,10 @@ const GameWrapper: React.FC = () => {
   const handleSleep = () => gameRef.current?.inputHandler.handleSleep();
   const handleClean = () => gameRef.current?.inputHandler.handleClean();
   const handlePause = () => gameRef.current?.togglePause();
-  const handleRestart = () => gameRef.current?.restart();
+  const handleRestart = () => {
+    gameRef.current?.restart();
+    setShowGameOverModal(false);
+  };
 
   return (
     <div ref={containerRef} className="w-full">
@@ -102,6 +112,22 @@ const GameWrapper: React.FC = () => {
           onPause={handlePause}
           onRestart={handleRestart}
         />
+
+        {/* Game Over Modal */}
+        {showGameOverModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-lg text-center w-[90%] max-w-md mx-4 space-y-4">
+              <h2 className="text-2xl font-bold text-red-600">Oh no!</h2>
+              <p className="text-gray-700">You let the kitty fade away... 😿</p>
+              <button
+                onClick={handleRestart}
+                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105 text-lg font-medium shadow-lg"
+              >
+                Rebirth New Kitty 🐱
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
