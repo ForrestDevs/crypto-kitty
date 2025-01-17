@@ -3,8 +3,7 @@ import path from 'path';
 import fs from 'fs/promises';
 
 const INPUT_PATHS = [
-  path.join(process.cwd(), 'public', 'catBG.png'),
-  path.join(process.cwd(), 'public', 'chair.png')
+  path.join(process.cwd(), 'public', 'longer.png'),
 ];
 
 async function optimizeImage(inputPath: string): Promise<void> {

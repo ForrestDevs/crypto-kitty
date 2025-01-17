@@ -16,7 +16,7 @@ export class Game {
 
   constructor(canvasElement: HTMLCanvasElement) {
     this.canvas = canvasElement;
-    this.ctx = this.canvas.getContext("2d", { alpha: false })!;
+    this.ctx = this.canvas.getContext("2d")!;
     this.assets = new AssetManager();
     this.gameState = new GameState();
     this.animator = new Animator(this.assets, this.gameState);

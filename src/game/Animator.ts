@@ -115,37 +115,25 @@ export class Animator {
 
   public render(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
     const spriteSheet = this.assets.getImage('spritesheet');
-    const background = this.assets.getImage('background');
-    const chair = this.assets.getImage('chair');
     
     if (!spriteSheet?.complete) return;
+
+    // Clear the canvas with transparency
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Calculate scale based on canvas size
     const baseWidth = 1920;
     const scale = canvas.width / baseWidth;
-
-    // Draw background
-    if (background?.complete) {
-      ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    }
-
-    // Draw chair
-    if (chair?.complete) {
-      const chairScale = 0.9 * scale;
-      const scaledChairWidth = chair.width * chairScale;
-      const scaledChairHeight = chair.height * chairScale;
-      const chairX = canvas.width / 2 - scaledChairWidth / 2;
-      const chairY = canvas.height / 2 - scaledChairHeight / 2 + 200;
-      ctx.drawImage(chair, chairX, chairY, scaledChairWidth, scaledChairHeight);
-    }
 
     // Draw cat sprite
     const animation = this.animations[this.currentAnimation.name];
     const catScale = 2 * scale;
     const scaledWidth = animation.frameWidth * catScale;
     const scaledHeight = animation.frameHeight * catScale;
-    const destX = canvas.width / 2 - scaledWidth / 2 - (25 * scale) - 10;
-    const destY = canvas.height / 2 - scaledHeight / 2 - (50 * scale) - 150;
+    
+    // Position cat relative to canvas size, with offset adjustments
+    const destX = (canvas.width / 2) - (scaledWidth / 2) - (45 * scale); // Move left by 40 scaled pixels
+    const destY = (canvas.height * 0.37) - (scaledHeight / 2); // Move up by changing from 0.45 to 0.42
 
     ctx.drawImage(
       spriteSheet,

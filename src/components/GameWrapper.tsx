@@ -83,10 +83,17 @@ const GameWrapper: React.FC = () => {
   return (
     <div ref={containerRef} className="w-full">
       <div className="flex flex-col gap-4">
-        <canvas 
-          ref={canvasRef}
-          className="rounded-lg shadow-lg overflow-hidden"
-        />
+        <div className="relative">
+          <img 
+            src="/longer.png" 
+            alt="Cat with chair background"
+            className="w-full rounded-lg shadow-lg"
+          />
+          <canvas 
+            ref={canvasRef}
+            className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10"
+          />
+        </div>
         <GameUI
           gameState={gameState}
           onFeed={handleFeed}
