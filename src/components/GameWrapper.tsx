@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
-import { Game } from '../game/Game';
-import { GameUI } from './GameUI';
-import { GameStateData } from '../types/game';
+import React, { useRef, useEffect, useState } from "react";
+import { Game } from "../game/Game";
+import { GameUI } from "./GameUI";
+import { GameStateData } from "../types/game";
+import Image from "next/image";
 
 const GameWrapper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,8 @@ const GameWrapper: React.FC = () => {
     cleanliness: 100,
     isDirty: false,
     isGameOver: false,
-    isPaused: false
+    isPaused: false,
+    isLoaded: false,
   });
   const [showGameOverModal, setShowGameOverModal] = useState(false);
 
@@ -25,20 +27,20 @@ const GameWrapper: React.FC = () => {
       if (containerRef.current && canvasRef.current) {
         const container = containerRef.current;
         const canvas = canvasRef.current;
-        
+
         // Get container dimensions
         const containerWidth = container.clientWidth;
         const maxWidth = Math.min(containerWidth, 1920); // Max width of 900px
-        const height = maxWidth * (1440/1920); // Maintain 900:400 aspect ratio
-        
+        const height = maxWidth * (1440 / 1920); // Maintain 900:400 aspect ratio
+
         // Set canvas size
         canvas.style.width = `${maxWidth}px`;
         canvas.style.height = `${height}px`;
-        
+
         // Set actual canvas dimensions (for rendering)
         canvas.width = maxWidth;
         canvas.height = height;
-        
+
         // Update game if it exists
         if (gameRef.current) {
           gameRef.current.handleResize(maxWidth, height);
@@ -46,10 +48,10 @@ const GameWrapper: React.FC = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize(); // Initial size
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Update game state every 100ms
@@ -58,7 +60,11 @@ const GameWrapper: React.FC = () => {
       if (gameRef.current) {
         const newState = gameRef.current.getState();
         setGameState(newState);
-        
+
+        if (newState.isLoaded) {
+          setGameState((prev) => ({ ...prev, isLoaded: true }));
+        }
+
         // Show game over modal when game ends
         if (newState.isGameOver && !showGameOverModal) {
           setShowGameOverModal(true);
@@ -94,15 +100,24 @@ const GameWrapper: React.FC = () => {
     <div ref={containerRef} className="w-full">
       <div className="flex flex-col gap-4">
         <div className="relative">
-          <img 
-            src="/longer.png" 
+          <Image
+            src="/longer.png"
             alt="Cat with chair background"
             className="w-full rounded-lg shadow-lg"
+            width={1920}
+            height={1440}
           />
-          <canvas 
+          <canvas
             ref={canvasRef}
             className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10"
           />
+          {!gameState.isLoaded && (
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10">
+              <div className="flex items-center justify-center h-full">
+                <div className="w-10 h-10 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+              </div>
+            </div>
+          )}
         </div>
         <GameUI
           gameState={gameState}
@@ -133,4 +148,4 @@ const GameWrapper: React.FC = () => {
   );
 };
 
-export default GameWrapper; 
+export default GameWrapper;

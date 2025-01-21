@@ -101,7 +101,7 @@ export const GameUI: React.FC<GameUIProps> = ({
             </button>
             <button
               onClick={onClean}
-              disabled={gameState.isGameOver}
+              disabled={!gameState.isDirty || gameState.isGameOver}
               className="px-4 py-3 sm:py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[100px]"
             >
               <span>🚿</span> Clean

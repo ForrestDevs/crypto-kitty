@@ -2,8 +2,6 @@ export class AssetManager {
   private images: Map<string, HTMLImageElement> = new Map();
   private readonly assetList = [
     { key: 'spritesheet', src: '/sheets/combined-sprite.png' },
-    { key: 'background', src: '/catBG.png' },
-    { key: 'chair', src: '/chair.png' }
   ];
 
   public async loadAll(): Promise<void> {

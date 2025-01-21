@@ -11,6 +11,7 @@ export class Animator {
   private assets: AssetManager;
   private gameState: GameState;
   private currentIdleState: 'idle_idle' | 'idle_idle2' = 'idle_idle';
+  private animationCallbacks: Map<AnimationName, () => void> = new Map();
 
   constructor(assets: AssetManager, gameState: GameState) {
     this.assets = assets;
@@ -46,11 +47,18 @@ export class Animator {
     };
   }
 
-  public queueAnimation(name: AnimationName, priority: number, loops: number = 1): void {
+  private isDirty2Animation(name: AnimationName): boolean {
+    return name === 'clean_dirty2' || name === 'idle_idle2';
+  }
+
+  public queueAnimation(name: AnimationName, priority: number, loops: number = 1, onComplete?: () => void): void {
     this.animationQueue = this.animationQueue.filter(item => item.priority >= priority);
     
     if (!this.animationQueue.some(item => item.name === name && item.priority >= priority)) {
       this.animationQueue.push({ name, priority, loops });
+      if (onComplete) {
+        this.animationCallbacks.set(name, onComplete);
+      }
     }
   }
 
@@ -88,6 +96,10 @@ export class Animator {
     const nextIdle = shouldBeDirty ? 'idle_idle2' : 'idle_idle';
     
     if (this.currentIdleState !== nextIdle) {
+      if (nextIdle === 'idle_idle2') {
+        this.animationQueue = this.animationQueue.filter(item => this.isDirty2Animation(item.name));
+      }
+      
       this.currentIdleState = nextIdle;
       if (this.currentAnimation.name.startsWith('idle_')) {
         this.stopAnimation();
@@ -109,8 +121,16 @@ export class Animator {
   }
 
   public stopAnimation(): void {
+    const completedAnimation = this.currentAnimation.name;
     this.currentAnimation = this.createIdleState();
     this.isPlayingAnimation = false;
+    
+    // Call and remove the callback if it exists
+    const callback = this.animationCallbacks.get(completedAnimation);
+    if (callback) {
+      callback();
+      this.animationCallbacks.delete(completedAnimation);
+    }
   }
 
   public render(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
@@ -146,6 +166,10 @@ export class Animator {
       scaledWidth,
       scaledHeight
     );
+  }
+
+  public clearAnimationQueue(): void {
+    this.animationQueue = [];
   }
 
   public reset(): void {

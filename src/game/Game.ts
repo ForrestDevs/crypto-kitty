@@ -13,6 +13,7 @@ export class Game {
   public inputHandler: InputHandler;
   private isRunning: boolean = false;
   private boundResizeCanvas: () => void;
+  public isLoaded: boolean = false;
 
   constructor(canvasElement: HTMLCanvasElement) {
     this.canvas = canvasElement;
@@ -28,10 +29,18 @@ export class Game {
   }
 
   private async init(): Promise<void> {
-    await this.assets.loadAll();
-    this.setupCanvas();
-    this.start();
+    try {
+      await this.assets.loadAll();
+      this.setupCanvas();
+      this.isLoaded = true;
+      this.gameState.setLoaded(true);
+      this.start();
+    } catch (error) {
+      console.error('Failed to load game assets:', error);
+    }
   }
+
+  
 
   private setupCanvas(): void {
     this.boundResizeCanvas = this.resizeCanvas.bind(this);
@@ -123,5 +132,9 @@ export class Game {
     this.canvas.height = height;
     // Force a render update
     this.render();
+  }
+
+  public isGameLoaded(): boolean {
+    return this.isLoaded;
   }
 }

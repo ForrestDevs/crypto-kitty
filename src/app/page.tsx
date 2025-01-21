@@ -3,7 +3,7 @@ import GameWrapper from "@/components/GameWrapper";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen px-4 sm:px-6 md:px-8 pb-20 gap-8 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-blue-100 to-purple-100">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen px-4 sm:px-6 md:px-8 pb-20 gap-8 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#FFE4C4] to-[#CD853F]">
       <header className="flex flex-col items-center gap-4 w-full max-w-4xl mx-auto pt-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-purple-800 text-center">
           Crypto Kitty

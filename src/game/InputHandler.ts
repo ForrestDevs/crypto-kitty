@@ -21,8 +21,9 @@ export class InputHandler {
     if (!state.isDirty) {
       this.game
         .getAnimator()
-        .queueAnimation("eat_eating", AnimationPriority.NORMAL);
-      this.game.getGameState().hunger = 100;
+        .queueAnimation("eat_eating", AnimationPriority.URGENT, 1, () => {
+          this.game.getGameState().hunger = 100;
+        });
     }
   }
 
@@ -31,16 +32,18 @@ export class InputHandler {
     if (!state.isDirty) {
       this.game
         .getAnimator()
-        .queueAnimation("sleep_full", AnimationPriority.URGENT);
-      this.game.getGameState().energy = 100;
+        .queueAnimation("sleep_full", AnimationPriority.URGENT, 1, () => {
+          this.game.getGameState().energy = 100;
+        });
     }
   }
 
   public handleClean(): void {
     this.game
       .getAnimator()
-      .queueAnimation("clean_shower", AnimationPriority.NORMAL);
-    this.game.getGameState().cleanliness = 100;
+      .queueAnimation("clean_shower", AnimationPriority.URGENT, 1, () => {
+        this.game.getGameState().cleanliness = 100;
+      });
   }
 
   private handleKeyDown(event: KeyboardEvent): void {
