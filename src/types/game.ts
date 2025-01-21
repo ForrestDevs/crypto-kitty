@@ -52,7 +52,6 @@ export interface GameStateData {
   isDirty: boolean;
   isGameOver: boolean;
   isPaused: boolean;
-  isLoaded: boolean;
 }
 
 export interface AnimationQueueItem {

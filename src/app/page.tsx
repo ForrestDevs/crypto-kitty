@@ -3,7 +3,7 @@ import GameWrapper from "@/components/GameWrapper";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen px-4 sm:px-6 md:px-8 pb-20 gap-8 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#FFE4C4] to-[#CD853F]">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen sm:px-6 md:px-8 pb-20 gap-8 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#FFE4C4] to-[#CD853F]">
       <header className="flex flex-col items-center gap-4 w-full max-w-4xl mx-auto pt-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-purple-800 text-center">
           Crypto Kitty
@@ -13,7 +13,7 @@ export default function Home() {
         </p>
       </header>
 
-      <main className="flex flex-col gap-8 items-center w-full max-w-6xl mx-auto px-4">
+      <main className="flex flex-col gap-8 items-center w-full max-w-6xl mx-auto">
         <div className="flex gap-6 flex-wrap justify-center max-w-4xl mx-auto">
           <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg w-full sm:w-[280px] min-h-[200px] flex flex-col">
             <h2 className="text-xl font-semibold mb-4 text-purple-800">
@@ -59,22 +59,6 @@ export default function Home() {
         </div>
         <GameWrapper />
       </main>
-
-      {/* <footer className="flex gap-4 sm:gap-6 flex-wrap items-center justify-center text-xs sm:text-sm text-gray-600 w-full max-w-4xl mx-auto mt-[400px]">
-        <p>© 2024 Crypto Kitty</p>
-        <a 
-          href="#" 
-          className="hover:text-purple-800 transition-colors"
-        >
-          Terms of Service
-        </a>
-        <a 
-          href="#" 
-          className="hover:text-purple-800 transition-colors"
-        >
-          Privacy Policy
-        </a>
-      </footer> */}
     </div>
   );
 }

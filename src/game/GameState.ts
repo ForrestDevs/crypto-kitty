@@ -37,7 +37,6 @@ export class GameState {
       isDirty: false,
       isGameOver: false,
       isPaused: false,
-      isLoaded: false
     };
   }
 
@@ -192,13 +191,5 @@ export class GameState {
 
   public set isPaused(value: boolean) {
     this.state.isPaused = value;
-  }
-
-  public setLoaded(loaded: boolean): void {
-    this.state.isLoaded = loaded;
-  }
-
-  public isLoaded(): boolean {
-    return this.state.isLoaded;
   }
 } 

@@ -17,7 +17,6 @@ const GameWrapper: React.FC = () => {
     isDirty: false,
     isGameOver: false,
     isPaused: false,
-    isLoaded: false,
   });
   const [showGameOverModal, setShowGameOverModal] = useState(false);
 
@@ -60,10 +59,6 @@ const GameWrapper: React.FC = () => {
       if (gameRef.current) {
         const newState = gameRef.current.getState();
         setGameState(newState);
-
-        if (newState.isLoaded) {
-          setGameState((prev) => ({ ...prev, isLoaded: true }));
-        }
 
         // Show game over modal when game ends
         if (newState.isGameOver && !showGameOverModal) {
@@ -111,13 +106,6 @@ const GameWrapper: React.FC = () => {
             ref={canvasRef}
             className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10"
           />
-          {!gameState.isLoaded && (
-            <div className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10">
-              <div className="flex items-center justify-center h-full">
-                <div className="w-10 h-10 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
-              </div>
-            </div>
-          )}
         </div>
         <GameUI
           gameState={gameState}
