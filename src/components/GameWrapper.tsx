@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import { Game } from "../game/Game";
 import { GameUI } from "./GameUI";
 import { GameStateData } from "../types/game";
-import Image from "next/image";
+// import Image from "next/image";
 
 const GameWrapper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,16 +96,14 @@ const GameWrapper: React.FC = () => {
     <div ref={containerRef} className="w-full">
       <div className="flex flex-col gap-4">
         <div className="relative">
-          <Image
-            src="/longer.png"
+          <img
+            src="/bgnew.png"
             alt="Cat with chair background"
-            className="w-full rounded-lg shadow-lg"
-            width={1920}
-            height={1440}
+            className="w-full h-screen object-cover"
           />
           <canvas
             ref={canvasRef}
-            className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden z-10"
+            className="absolute top-0 left-0 w-full min-h-screen object-cover z-10"
           />
         </div>
         <GameUI

@@ -1,5 +1,5 @@
-import React from 'react';
-import { GameStateData, DECAY_RATES } from '../types/game';
+import React from "react";
+import { GameStateData, DECAY_RATES } from "../types/game";
 
 interface GameUIProps {
   gameState: GameStateData;
@@ -21,25 +21,26 @@ const StatusBar: React.FC<{
   const seconds = timeUntilEmpty % 60;
 
   const getStatusColor = () => {
-    if (value <= 20) return 'bg-red-500';
-    if (value <= 40) return 'bg-yellow-500';
+    if (value <= 20) return "bg-red-500";
+    if (value <= 40) return "bg-yellow-500";
     return color;
   };
 
   return (
-    <div className="w-full bg-white/80 p-3 rounded-lg shadow-sm">
-      <div className="flex justify-between mb-2">
-        <span className="text-sm font-semibold text-gray-700">{label}</span>
-        <div className="flex gap-2 items-center">
-          <span className="text-sm font-medium text-gray-500">
-            {minutes > 0 ? `${minutes}m ` : ''}{seconds}s
+    <div className="w-full bg-white/80 p-2 rounded-lg shadow-sm">
+      <div className="flex justify-between mb-1">
+        <span className="text-xs font-semibold text-gray-700">{label}</span>
+        <div className="flex gap-1 items-center">
+          <span className="text-xs font-medium text-gray-500">
+            {minutes > 0 ? `${minutes}m ` : ""}
+            {seconds}s
           </span>
-          <span className="text-sm font-bold">{Math.round(value)}%</span>
+          <span className="text-xs font-bold text-gray-800">{Math.round(value)}%</span>
         </div>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-3">
+      <div className="w-full bg-gray-200 rounded-full h-2">
         <div
-          className={`h-3 rounded-full transition-all duration-300 ${getStatusColor()}`}
+          className={`h-2 rounded-full transition-all duration-300 ${getStatusColor()}`}
           style={{ width: `${value}%` }}
         />
       </div>
@@ -56,7 +57,7 @@ export const GameUI: React.FC<GameUIProps> = ({
   onRestart,
 }) => {
   return (
-    <div className="p-4">
+    <div className="absolute bottom-0 left-0 right-0 p-4 z-[11]">
       <div className="max-w-md mx-auto space-y-4">
         {/* Status Bars */}
         <div className="space-y-2">
@@ -82,7 +83,7 @@ export const GameUI: React.FC<GameUIProps> = ({
 
         {/* Controls */}
         <div className="flex flex-wrap gap-2 justify-center">
-          <div className="flex gap-2 sm:flex-row flex-col">
+          <div className="gap-2 grid grid-cols-3">
             <button
               onClick={onFeed}
               disabled={gameState.isDirty || gameState.isGameOver}
@@ -131,28 +132,8 @@ export const GameUI: React.FC<GameUIProps> = ({
               Kitty needs cleaning!
             </span>
           )}
-          {gameState.isPaused && (
-            <span className="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">
-              Game Paused
-            </span>
-          )}
         </div>
       </div>
-
-      {/* Game Over Modal */}
-      {gameState.isGameOver && (
-        <div className="h-screen fixed inset-0 translate-y-[-68.7%] flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg text-center w-[90%] max-w-md mx-4">
-            <h2 className="text-2xl font-bold mb-4">Game Over!</h2>
-            <button
-              onClick={onRestart}
-              className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-lg"
-            >
-              Play Again
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
-}; 
+};

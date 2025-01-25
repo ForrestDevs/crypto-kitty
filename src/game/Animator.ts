@@ -1,4 +1,10 @@
-import { AnimationName, AnimationConfig, AnimationState, AnimationQueueItem, THRESHOLDS } from "../types/game";
+import {
+  AnimationName,
+  AnimationConfig,
+  AnimationState,
+  AnimationQueueItem,
+  THRESHOLDS,
+} from "../types/game";
 import { AssetManager } from "./AssetManager";
 import { GameState } from "./GameState";
 import { combinedConfig } from "../../public/sheets/config";
@@ -10,7 +16,7 @@ export class Animator {
   private isPlayingAnimation: boolean = false;
   private assets: AssetManager;
   private gameState: GameState;
-  private currentIdleState: 'idle_idle' | 'idle_idle2' = 'idle_idle';
+  private currentIdleState: "idle_idle" | "idle_idle2" = "idle_idle";
   private animationCallbacks: Map<AnimationName, () => void> = new Map();
 
   constructor(assets: AssetManager, gameState: GameState) {
@@ -23,7 +29,7 @@ export class Animator {
   private loadAnimations(): Record<AnimationName, AnimationConfig> {
     const baseFps = 40;
     return Object.fromEntries(
-      combinedConfig.animations.map(anim => [
+      combinedConfig.animations.map((anim) => [
         anim.name as AnimationName,
         {
           name: anim.name,
@@ -32,7 +38,7 @@ export class Animator {
           frameHeight: anim.frameHeight,
           rowIndex: anim.rowIndex,
           fps: baseFps,
-        }
+        },
       ])
     ) as Record<AnimationName, AnimationConfig>;
   }
@@ -48,13 +54,24 @@ export class Animator {
   }
 
   private isDirty2Animation(name: AnimationName): boolean {
-    return name === 'clean_dirty2' || name === 'idle_idle2';
+    return name === "clean_dirty2" || name === "idle_idle2";
   }
 
-  public queueAnimation(name: AnimationName, priority: number, loops: number = 1, onComplete?: () => void): void {
-    this.animationQueue = this.animationQueue.filter(item => item.priority >= priority);
-    
-    if (!this.animationQueue.some(item => item.name === name && item.priority >= priority)) {
+  public queueAnimation(
+    name: AnimationName,
+    priority: number,
+    loops: number = 1,
+    onComplete?: () => void
+  ): void {
+    this.animationQueue = this.animationQueue.filter(
+      (item) => item.priority >= priority
+    );
+
+    if (
+      !this.animationQueue.some(
+        (item) => item.name === name && item.priority >= priority
+      )
+    ) {
       this.animationQueue.push({ name, priority, loops });
       if (onComplete) {
         this.animationCallbacks.set(name, onComplete);
@@ -75,8 +92,11 @@ export class Animator {
 
     if (this.currentAnimation.name !== this.currentIdleState) {
       if (this.currentAnimation.currentFrame >= animation.frameCount - 1) {
-        if (this.currentAnimation.targetLoops === -1 || 
-            this.currentAnimation.loopCount < this.currentAnimation.targetLoops - 1) {
+        if (
+          this.currentAnimation.targetLoops === -1 ||
+          this.currentAnimation.loopCount <
+            this.currentAnimation.targetLoops - 1
+        ) {
           this.currentAnimation.currentFrame = 0;
           this.currentAnimation.loopCount++;
         } else {
@@ -92,16 +112,19 @@ export class Animator {
   }
 
   private updateIdleState(): void {
-    const shouldBeDirty = this.gameState.getData().cleanliness <= THRESHOLDS.dirty2;
-    const nextIdle = shouldBeDirty ? 'idle_idle2' : 'idle_idle';
-    
+    const shouldBeDirty =
+      this.gameState.getData().cleanliness <= THRESHOLDS.dirty2;
+    const nextIdle = shouldBeDirty ? "idle_idle2" : "idle_idle";
+
     if (this.currentIdleState !== nextIdle) {
-      if (nextIdle === 'idle_idle2') {
-        this.animationQueue = this.animationQueue.filter(item => this.isDirty2Animation(item.name));
+      if (nextIdle === "idle_idle2") {
+        this.animationQueue = this.animationQueue.filter((item) =>
+          this.isDirty2Animation(item.name)
+        );
       }
-      
+
       this.currentIdleState = nextIdle;
-      if (this.currentAnimation.name.startsWith('idle_')) {
+      if (this.currentAnimation.name.startsWith("idle_")) {
         this.stopAnimation();
       }
     }
@@ -124,7 +147,7 @@ export class Animator {
     const completedAnimation = this.currentAnimation.name;
     this.currentAnimation = this.createIdleState();
     this.isPlayingAnimation = false;
-    
+
     // Call and remove the callback if it exists
     const callback = this.animationCallbacks.get(completedAnimation);
     if (callback) {
@@ -133,9 +156,12 @@ export class Animator {
     }
   }
 
-  public render(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
-    const spriteSheet = this.assets.getImage('spritesheet');
-    
+  public render(
+    ctx: CanvasRenderingContext2D,
+    canvas: HTMLCanvasElement
+  ): void {
+    const spriteSheet = this.assets.getImage("spritesheet");
+
     if (!spriteSheet?.complete) return;
 
     // Clear the canvas with transparency
@@ -147,25 +173,46 @@ export class Animator {
 
     // Draw cat sprite
     const animation = this.animations[this.currentAnimation.name];
-    const catScale = 2 * scale;
-    const scaledWidth = animation.frameWidth * catScale;
-    const scaledHeight = animation.frameHeight * catScale;
-    
-    // Position cat relative to canvas size, with offset adjustments
-    const destX = (canvas.width / 2) - (scaledWidth / 2) - (45 * scale); // Move left by 40 scaled pixels
-    const destY = (canvas.height * 0.37) - (scaledHeight / 2); // Move up by changing from 0.45 to 0.42
 
-    ctx.drawImage(
+    const catScale = 1.5 * scale;
+    // Calculate dimensions, ensuring we use integer values
+    const scaledWidth = Math.floor(animation.frameWidth * catScale);
+    const scaledHeight = Math.floor(animation.frameHeight * catScale);
+
+    // Position cat relative to canvas size, with pixel-perfect positioning
+    const destX = Math.floor(canvas.width / 2 - scaledWidth / 2 - 25 * scale);
+    const yMultiplier = window.innerHeight <= 800 ? 0.275 : 0.34;
+    const destY = Math.floor(canvas.height * yMultiplier - scaledHeight / 2);
+
+    // Disable image smoothing for pixel-perfect rendering
+    ctx.imageSmoothingEnabled = false;
+
+    // Create a temporary canvas for high-quality scaling
+    const tempCanvas = document.createElement("canvas");
+    const tempCtx = tempCanvas.getContext("2d")!;
+    tempCanvas.width = scaledWidth;
+    tempCanvas.height = scaledHeight;
+
+    // Draw to temp canvas first
+    tempCtx.imageSmoothingEnabled = false;
+    tempCtx.drawImage(
       spriteSheet,
       this.currentAnimation.currentFrame * animation.frameWidth,
       animation.rowIndex * animation.frameHeight,
       animation.frameWidth,
       animation.frameHeight,
-      destX,
-      destY,
+      0,
+      0,
       scaledWidth,
       scaledHeight
     );
+
+    // Draw from temp canvas to main canvas
+    ctx.drawImage(tempCanvas, destX, destY);
+
+    // Reset image smoothing to default
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "low";
   }
 
   public clearAnimationQueue(): void {
@@ -175,7 +222,7 @@ export class Animator {
   public reset(): void {
     this.animationQueue = [];
     this.isPlayingAnimation = false;
-    this.currentIdleState = 'idle_idle';
+    this.currentIdleState = "idle_idle";
     this.currentAnimation = this.createIdleState();
   }
-} 
+}

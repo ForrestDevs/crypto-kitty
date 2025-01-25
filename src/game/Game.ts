@@ -40,9 +40,9 @@ export class Game {
   }
 
   private resizeCanvas(): void {
-    const aspectRatio = 1920 / 1440;
-    this.canvas.width = window.innerWidth * 0.98;
-    this.canvas.height = this.canvas.width / aspectRatio;
+    // const aspectRatio = 1920 / 1440;
+    this.canvas.width = 1275;
+    this.canvas.height = window.innerHeight;
   }
 
   public start(): void {
@@ -98,7 +98,7 @@ export class Game {
 
   public cleanup(): void {
     this.pause();
-    window.removeEventListener("resize", this.boundResizeCanvas);
+    // window.removeEventListener("resize", this.boundResizeCanvas);
     this.inputHandler.cleanup();
   }
 
